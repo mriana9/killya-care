@@ -37,6 +37,14 @@
   margin: auto;
 }
 
+.register-form .contact-form .title {
+  color: var(--primary-color);
+}
+
+.register-form .contact-form .title i {
+  font-size: 26px;
+}
+
 .register-form .contact-form .box {
   margin-top: 20px;
 }

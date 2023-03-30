@@ -23,7 +23,8 @@
         <section class="register-form">
             <div class="container">
                 <div class="contact-form">
-                    <h2>انشاء حساب جديد</h2>
+                    <h2 class="title"> <i class='bx bxs-user-plus mt-3'></i> 
+                    انشاء حساب جديد</h2>
                     <form>
                         <div class="row">
                                     <div class="col-md-6 box">

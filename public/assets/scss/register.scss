@@ -27,6 +27,14 @@
         background-color: #fff;
         margin: auto;
 
+        .title {
+            color: var(--primary-color);
+
+            i {
+                font-size: 26px;
+            }
+        }
+
         .box {
             margin-top: 20px;
 
