@@ -1,0 +1,126 @@
+:root {
+  --primary-color:#3871C1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  font-family: 'El Messiri', sans-serif;
+}
+
+header .top-header {
+  height: 40px;
+  width: 100%;
+  color: #fff;
+  background-color: var(--primary-color);
+}
+
+header .top-header .phone, header .top-header .email {
+  height: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border: 1px solid rgba(169, 169, 169, 0.6);
+  border-top: none;
+  padding: 0px 20px;
+  border-bottom: none;
+  font-size: 14px;
+}
+
+header .top-header .phone i, header .top-header .email i {
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+header .top-header .socail-media-link {
+  height: 100%;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+}
+
+header .top-header .socail-media-link li {
+  height: 100%;
+  border: 1px solid rgba(169, 169, 169, 0.6);
+  border-top: none;
+  border-bottom: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .top-header .socail-media-link li a {
+  height: 100%;
+  color: #fff;
+  padding: 0px 20px;
+  text-decoration: none;
+}
+
+header .top-header .socail-media-link li a i {
+  margin-top: 60%;
+}
+
+header nav {
+  height: 60px;
+  -webkit-box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 1px 4px 0;
+          box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 1px 4px 0;
+}
+
+header nav .navbar-brand img {
+  height: 55px;
+}
+
+header nav .contact-info {
+  font-family: sans-serif;
+}
+
+header nav .contact-info .icon i {
+  font-size: 44px;
+  color: var(--primary-color);
+}
+
+header nav .contact-info .info {
+  line-height: 5px;
+  padding-right: 6px;
+  margin-top: 10px;
+}
+
+header nav .contact-info .info h2 {
+  font-size: 14px;
+}
+
+header nav .contact-info .info p {
+  font-size: 14px;
+}
+
+header nav .contact-info .info p {
+  color: #787878;
+}
+
+@media screen and (max-width: 1024px) {
+  header .top-header {
+    display: none;
+  }
+  header nav {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+}
+/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,112 @@
+@import '../../../resources/sass/variables';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    font-family: 'El Messiri', sans-serif;
+    .top-header {
+        height: 40px;
+        width: 100%;
+        color: #fff;
+        background-color: var(--primary-color);
+
+        .phone, .email {
+            height: 100%;
+            width: max-content;
+            border: 1px solid rgba(169, 169, 169, 0.6);
+            border-top: none;
+            padding: 0px 20px;
+            border-bottom: none;
+            font-size: 14px;
+
+            i {
+                padding-right: 5px;
+                padding-bottom: 5px;
+            }
+        }
+
+        .socail-media-link {
+            height: 100%;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+
+            li {
+                height: 100%;
+                border: 1px solid rgba(169, 169, 169, 0.6);
+                border-top: none;
+                border-bottom: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                a {
+                    height: 100%;
+                    color: #fff;
+                    padding: 0px 20px;
+                    text-decoration: none;
+
+                    i {
+                        margin-top: 60%;
+                    }
+                }
+            }
+        }
+
+    }
+
+    nav {
+        height: 60px;
+        box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 1px 4px 0;
+
+        .navbar-brand {
+            img {
+                height: 55px;
+            }
+        }
+
+        .contact-info {
+            font-family: sans-serif;
+            .icon {
+                i {
+                    font-size: 44px;
+                    color: var(--primary-color);
+                }
+            }
+
+            .info {
+                line-height: 5px;
+                padding-right: 6px;
+                margin-top: 10px;
+
+                h2 {
+                    font-size: 14px;
+                }
+
+                p {
+                    font-size: 14px;
+                }
+
+                p {
+                    color: #787878;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    header {
+        .top-header {
+            display: none;
+        }
+
+        nav {
+            height: max-content;
+        }
+    }
+}

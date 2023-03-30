@@ -1,0 +1,67 @@
+:root {
+  --primary-color:#3871C1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+footer {
+  padding: 30px 20px;
+  padding-bottom: 0px;
+  color: #fff;
+  font-family: 'El Messiri', sans-serif;
+  background-color: var(--primary-color);
+}
+
+footer .footer-img {
+  height: 100px;
+}
+
+footer .pages-links {
+  list-style: none;
+  line-height: 60px;
+  padding-right: 50%;
+}
+
+footer .pages-links li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer .pages-links li a:hover {
+  padding-right: 5px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  text-decoration: underline;
+}
+
+footer .pages-links li:first-child {
+  font-weight: 900;
+}
+
+footer .contact-us-link {
+  list-style: none;
+  line-height: 40px;
+}
+
+footer .contact-us-link li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer .contact-us-link li a:hover {
+  padding-right: 5px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  text-decoration: underline;
+}
+
+footer .contact-us-link li:first-child {
+  font-weight: 900;
+  padding-top: 10px;
+}
+/*# sourceMappingURL=footer.css.map */

@@ -1,0 +1,64 @@
+@import '../../../resources/sass/variables';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+footer {
+    padding: 30px 20px ;
+    padding-bottom: 0px;
+    color: #fff;
+    font-family: 'El Messiri', sans-serif;
+    background-color: var(--primary-color);
+
+    .footer-img {
+        height: 100px;
+    }
+
+    .pages-links {
+        list-style: none;
+        line-height: 60px;
+        padding-right: 50%;
+
+        li {
+            a {
+                color: #fff;
+                text-decoration: none;
+
+                &:hover {
+                    padding-right: 5px;
+                    transition: 1s;
+                    text-decoration: underline;
+                }
+            }
+
+            &:first-child {
+                font-weight: 900;
+            }
+        }
+    }
+
+    .contact-us-link {
+        list-style: none;
+        line-height: 40px;
+
+        li {
+            a {
+                color: #fff;
+                text-decoration: none;
+
+                &:hover {
+                    padding-right: 5px;
+                    transition: 1s;
+                    text-decoration: underline;
+                }
+            }
+
+            &:first-child {
+                font-weight: 900;
+                padding-top: 10px;
+            }
+        }
+    }
+}
