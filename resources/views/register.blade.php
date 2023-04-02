@@ -37,7 +37,21 @@
                                     <div class="col-md-6 box">
                                         <label>
                                         <span class="text-danger">*</span>
-                                            الاسم الأخير
+                                            الاسم الأب
+                                        </label>
+                                        <input type="text" placeholder="الاسم الأخير" require>
+                                    </div>
+                                    <div class="col-md-6 box">
+                                        <label>
+                                        <span class="text-danger">*</span>
+                                            الاسم الجد
+                                        </label>
+                                        <input type="text" placeholder="الاسم الأخير" require>
+                                    </div>
+                                    <div class="col-md-6 box">
+                                        <label>
+                                        <span class="text-danger">*</span>
+                                            الاسم العائلة
                                         </label>
                                         <input type="text" placeholder="الاسم الأخير" require>
                                     </div>

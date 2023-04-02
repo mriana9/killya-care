@@ -17,6 +17,25 @@
         @section('content')
         <section class="page-intro">
             <div class="info">
+                <h2>صفحة المريض</h2>
+                <a href="#"> <i class='bx bx-home'></i> الرئيسية</a>
+            </div>
+        </section>
+
+        <section class="profile-info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 bg-danger">
+                        <div class="image">
+                        <img src="assets/img/user.png" alt="service-img">
+                        </div>
+                    </div>
+                    <div class="col-md-9 bg-info">
+                        <div class="info">
+                            <h2> ماريانا ربحي احمد الغافي</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         @endsection
