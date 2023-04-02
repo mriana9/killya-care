@@ -66,9 +66,23 @@
                                     <div class="col-md-6 box">
                                         <label>
                                         <span class="text-danger">*</span>
+                                            رقم الهوية 
+                                        </label>
+                                        <input type="text" placeholder=" رقم الهوية" require>
+                                    </div>
+                                    <div class="col-md-6 box">
+                                        <label>
+                                        <span class="text-danger">*</span>
                                             كلمة المرور 
                                         </label>
                                         <input type="text" placeholder=" كلمة المرور" require>
+                                    </div>
+                                    <div class="col-md-6 box">
+                                        <label>
+                                        <span class="text-danger">*</span>
+                                           تاكيد كلمة المرور  
+                                        </label>
+                                        <input type="text" placeholder="تاكيد كلمة المرور " require>
                                     </div>
                                     <div class="msg-error mt-2 d-flex algin-item-end text-danger">
                                         <i class='bx bxs-error-circle mx-1 mt-1'></i>

@@ -316,6 +316,7 @@ body::-webkit-scrollbar-thumb {
 
 .our-services .service-box {
   width: 100%;
+  min-height: 300px;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
