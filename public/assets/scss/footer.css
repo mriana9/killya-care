@@ -64,4 +64,14 @@ footer .contact-us-link li:first-child {
   font-weight: 900;
   padding-top: 10px;
 }
+
+@media screen and (max-width: 1024px) {
+  footer .pages-links {
+    padding-right: 0px;
+    line-height: 40px;
+  }
+  footer .contact-us-link {
+    padding-right: 0;
+  }
+}
 /*# sourceMappingURL=footer.css.map */

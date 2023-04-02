@@ -6,6 +6,16 @@
                     <ul class="socail-media-link">
                         <li>
                             <a href="#" target="_blank">
+                                <i class='bx bx-log-in'></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <i class='bx bx-user-plus'></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
                                 <i class='bx bxl-facebook'></i>
                             </a>
                         </li>
