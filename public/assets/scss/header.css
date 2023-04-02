@@ -1,5 +1,6 @@
 :root {
   --primary-color:#3871C1;
+  --light-text-color:#787878;
 }
 
 * {
@@ -7,6 +8,19 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 4px;
 }
 
 header {
@@ -110,7 +124,7 @@ header nav .contact-info .info p {
 }
 
 header nav .contact-info .info p {
-  color: #787878;
+  color: var(--light-text-color);
 }
 
 @media screen and (max-width: 1024px) {

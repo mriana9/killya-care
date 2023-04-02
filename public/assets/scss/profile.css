@@ -7,18 +7,114 @@
 
 .page-intro {
   height: 50vh;
+  position: relative;
   background-size: cover;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(56, 113, 193, 0.3)), to(rgba(56, 113, 193, 0.3))), url("../img/1.jpg");
-  background-image: linear-gradient(to bottom, rgba(56, 113, 193, 0.3), rgba(56, 113, 193, 0.3)), url("../img/1.jpg");
+  font-family: 'El Messiri', sans-serif;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(13, 57, 120, 0.5)), to(rgba(13, 57, 120, 0.5))), url("../img/1.jpg");
+  background-image: linear-gradient(to bottom, rgba(13, 57, 120, 0.5), rgba(13, 57, 120, 0.5)), url("../img/1.jpg");
 }
 
 .page-intro .info {
   color: #fff;
-  text-align: center;
+  text-align: start;
   position: absolute;
   top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  padding-right: 20px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.page-intro .info a {
+  font-size: 22px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.profile-info {
+  padding: 50px 0px;
+}
+
+.profile-info .image {
+  height: 320px;
+  width: 100%;
+}
+
+.profile-info .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.profile-info .info .user-info {
+  padding-top: 10px;
+  list-style: none;
+}
+
+.profile-info .info .user-info li {
+  font-size: 20px;
+  padding-top: 2px;
+  font-weight: 400;
+  border-bottom: 1px solid #ccc;
+}
+
+.profile-info .info .user-info li i {
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+.profile-info .info .user-info li p {
+  font-size: 16px;
+  color: var(--light-text-color);
+}
+
+.profile-info .info .user-info li .edit i {
+  font-size: 26px;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.profile-info .info .user-info li:hover {
+  border-bottom: 1px solid var(--light-text-color);
+}
+
+.profile-info .info .user-info li:hover .edit i {
+  visibility: visible;
+}
+
+.profile-info .info .user-info li .edit-input {
+  width: 100%;
+}
+
+.profile-info .info .user-info li .edit-input input {
+  width: 100%;
+  border: 1px solid var(--primary-color);
+  padding: 8px 10px;
+  border-radius: 4px;
+  text-align: start;
+  margin-bottom: 5px;
+  outline: none;
+  display: none;
+  caret-color: var(--primary-color);
+}
+
+.profile-info .info .user-info li .edit-input input::-webkit-input-placeholder {
+  color: #ccc;
+  text-align: start;
+}
+
+.profile-info .info .user-info li .edit-input input:-ms-input-placeholder {
+  color: #ccc;
+  text-align: start;
+}
+
+.profile-info .info .user-info li .edit-input input::-ms-input-placeholder {
+  color: #ccc;
+  text-align: start;
+}
+
+.profile-info .info .user-info li .edit-input input::placeholder {
+  color: #ccc;
+  text-align: start;
 }
 /*# sourceMappingURL=profile.css.map */

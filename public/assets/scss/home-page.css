@@ -6,19 +6,6 @@
           box-sizing: border-box;
 }
 
-body::-webkit-scrollbar {
-  width: 10px;
-}
-
-body::-webkit-scrollbar-track {
-  background: #fff;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color);
-  border-radius: 4px;
-}
-
 .category {
   width: -webkit-max-content;
   width: -moz-max-content;
