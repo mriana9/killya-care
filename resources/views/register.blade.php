@@ -56,13 +56,28 @@
                                        </label>
                                         <input type="date"  placeholder=" تاريخ الميلاد" require>
                                     </div>
+                                    <div class="col-md-6 box">
+                                        <label>
+                                        <span class="text-danger">*</span>
+                                             الايميل
+                                        </label>
+                                        <input type="text" placeholder="الايميل " require>
+                                    </div>
+                                    <div class="col-md-6 box">
+                                        <label>
+                                        <span class="text-danger">*</span>
+                                            كلمة المرور 
+                                        </label>
+                                        <input type="text" placeholder=" كلمة المرور" require>
+                                    </div>
                                     <div class="msg-error mt-2 d-flex algin-item-end text-danger">
                                         <i class='bx bxs-error-circle mx-1 mt-1'></i>
                                         رقم الهاتف مطلوب
                                     </div>
                                     <div class="col-md-12 box">
-                                        <button type="submit"> حجز موعد</button>
+                                        <button type="submit"> انشاء حساب</button>
                                     </div>
+                                    <p> لديك حساب قم <a href="#"> الدخول الى حسابك</a></p>
                                 </div>
                             </form>
                         </div>
