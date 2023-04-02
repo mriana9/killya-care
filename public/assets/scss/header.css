@@ -1,5 +1,6 @@
 :root {
   --primary-color:#3871C1;
+  --light-text-color:#787878;
 }
 
 * {
@@ -123,7 +124,7 @@ header nav .contact-info .info p {
 }
 
 header nav .contact-info .info p {
-  color: #787878;
+  color: var(--light-text-color);
 }
 
 @media screen and (max-width: 1024px) {
