@@ -35,7 +35,7 @@
 }
 
 .profile-info .image {
-  height: 320px;
+  height: 250px;
   width: 100%;
 }
 
@@ -68,12 +68,6 @@
   color: var(--light-text-color);
 }
 
-.profile-info .info .user-info li .edit i {
-  font-size: 26px;
-  cursor: pointer;
-  visibility: hidden;
-}
-
 .profile-info .info .user-info li:hover {
   border-bottom: 1px solid var(--light-text-color);
 }
@@ -82,11 +76,14 @@
   visibility: visible;
 }
 
-.profile-info .info .user-info li .edit-input {
+.profile-info .info .user-info li .edit-input, .profile-info .info .user-info li #show-input1 {
   width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
-.profile-info .info .user-info li .edit-input input {
+.profile-info .info .user-info li .edit-input input, .profile-info .info .user-info li #show-input1 input {
   width: 100%;
   border: 1px solid var(--primary-color);
   padding: 8px 10px;
@@ -98,23 +95,42 @@
   caret-color: var(--primary-color);
 }
 
-.profile-info .info .user-info li .edit-input input::-webkit-input-placeholder {
+.profile-info .info .user-info li .edit-input input::-webkit-input-placeholder, .profile-info .info .user-info li #show-input1 input::-webkit-input-placeholder {
   color: #ccc;
   text-align: start;
 }
 
-.profile-info .info .user-info li .edit-input input:-ms-input-placeholder {
+.profile-info .info .user-info li .edit-input input:-ms-input-placeholder, .profile-info .info .user-info li #show-input1 input:-ms-input-placeholder {
   color: #ccc;
   text-align: start;
 }
 
-.profile-info .info .user-info li .edit-input input::-ms-input-placeholder {
+.profile-info .info .user-info li .edit-input input::-ms-input-placeholder, .profile-info .info .user-info li #show-input1 input::-ms-input-placeholder {
   color: #ccc;
   text-align: start;
 }
 
-.profile-info .info .user-info li .edit-input input::placeholder {
+.profile-info .info .user-info li .edit-input input::placeholder, .profile-info .info .user-info li #show-input1 input::placeholder {
   color: #ccc;
   text-align: start;
+}
+
+.profile-info .info .edit i {
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.profile-info .info .edit .btn-success {
+  visibility: hidden;
+  margin-left: 10px;
+}
+
+.profile-info .info .edit .btn-success.show {
+  visibility: visible;
+}
+
+.profile-info .info .edit .btn-primary {
+  background-color: var(--primary-color);
 }
 /*# sourceMappingURL=profile.css.map */

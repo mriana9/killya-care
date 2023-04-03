@@ -202,11 +202,20 @@
   position: absolute;
   z-index: 2;
   top: 50%;
+  padding: 20px;
+  font-size: 20px;
   right: 0%;
+  color: #fff;
+  background-color: var(--primary-color);
   -webkit-transform: translate(-220%, 110%);
           transform: translate(-220%, 110%);
   -webkit-box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0;
           box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+}
+
+.about-us .about-us-img .about-img-top p {
+  font-size: 20px;
+  text-align: center;
 }
 
 .about-us .about-us-img img {
