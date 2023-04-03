@@ -32,79 +32,69 @@
                     </div>
                     <div class="col-md-9">
                         <div class="info">
-                            <ul class="user-info">
+                        <div class="edit w-100 d-flex justify-content-end align-items-end" id="edit1">
+                            <button class="btn btn-success save-btn">حفظ</button>
+                            <button class="btn btn-primary">تعديل</button>
+                        </div>
+                        <form>
+                        <ul class="user-info">
                                 <li>
-                                    <div class="d-flex align-item-center justify-content-between">
-                                        <div>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex align-items-start justify-content-between">
                                             <i class='bx bxs-user' ></i>
-                                            الاسم:  
-                                            <p>
+                                            <p class="px-2">
                                                 ماريانا ربحي احمد الغافي
                                             </p>
                                         </div>
-                                        <div class="edit" id="edit1">
-                                            <i class='bx bxs-edit-alt bx-flip-horizontal' ></i>
-                                        </div>
                                     </div>
                                     <div class="edit-input">
-                                            <input class="show-input" id="show-input1" type="text" placeholder=" تعديل الاسم ">
+                                        <input class="show-input" type="text" placeholder=" تعديل الاسم ">
                                     </div>
                                 </li>
 
                                 <li>
-                                    <div class="d-flex align-item-center justify-content-between">
-                                        <div>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex align-items-start justify-content-between">
                                         <i class='bx bxs-phone bx-flip-horizontal' ></i>
-                                        رقم الهاتف :
-                                        <p>
+                                        <p class="px-2">
                                             0591234567
                                         </p>
                                         </div>
-                                        <div class="edit" id="edit2">
-                                            <i class='bx bxs-edit-alt bx-flip-horizontal' ></i>
-                                        </div>
                                     </div>
-                                    <div class="edit-input">
-                                            <input class="show-input" id="show-input2" type="text" placeholder=" تعديل الاسم ">
+                                    <div class="edit-input" >
+                                            <input class="show-input" type="text" placeholder=" تعديل رقم الهاتف ">
                                     </div>
                                 </li>
                                 
                                 <li>
-                                    <div class="d-flex align-item-center justify-content-between">
-                                        <div>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex align-items-start justify-content-between">
                                         <i class='bx bxs-user-detail'></i>
-                                        رقم الهوية :
-                                    <p>
-                                        404008799
-                                    </p>
-                                        </div>
-                                        <div class="edit" id="edit3">
-                                            <i class='bx bxs-edit-alt bx-flip-horizontal' ></i>
+                                        <p class="px-2">
+                                            404008799
+                                        </p>
                                         </div>
                                     </div>
                                     <div class="edit-input">
-                                            <input class="show-input" id="show-input3" type="text" placeholder=" تعديل الاسم ">
+                                            <input class="show-input" type="text" placeholder=" تعديل رقم الهوية ">
                                     </div>
                                 </li>
 
                                 <li>
-                                    <div class="d-flex align-item-center justify-content-between">
-                                        <div>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex align-items-start justify-content-between">
                                         <i class='bx bx-calendar' ></i>
-                                        تاريخ الميلاد :
-                                        <p>
+                                        <p class="px-2">
                                             12/6/1980
                                         </p>
                                         </div>
-                                        <div class="edit" id="edit4">
-                                            <i class='bx bxs-edit-alt bx-flip-horizontal' ></i>
-                                        </div>
                                     </div>
                                     <div class="edit-input">
-                                            <input class="show-input" id="show-input4" type="text" placeholder=" تعديل الاسم ">
+                                            <input class="show-input" type="text" placeholder=" تعديل تاريخ الميلاد ">
                                     </div>
                                 </li>
                             </ul>
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -116,16 +106,8 @@
         <script>
 		$(document).ready(function() {
 			$("#edit1").click(function() {
-				$("#show-input1").toggle();
-			});
-            $("#edit2").click(function() {
-				$("#show-input2").toggle();
-			});
-            $("#edit3").click(function() {
-				$("#show-input3").toggle();
-			});
-            $("#edit4").click(function() {
-				$("#show-input4").toggle();
+				$(".show-input").toggle();
+                $('.save-btn').toggleClass('show')
 			});
 		});
 	</script>

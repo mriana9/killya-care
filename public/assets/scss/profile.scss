@@ -31,7 +31,7 @@
     padding: 50px 0px;
 
     .image {
-        height: 320px;
+        height: 250px;
         width: 100%;
 
         img {
@@ -63,14 +63,6 @@
 
                 }
 
-                .edit {
-                    i {
-                        font-size: 26px;
-                        cursor: pointer;
-                        visibility: hidden;
-                    }
-                }
-
                 &:hover {
                     .edit {
                         i{
@@ -80,10 +72,11 @@
                     border-bottom: 1px solid var(--light-text-color);
                 }
 
-                .edit-input {
+                .edit-input, #show-input1{
                     width: 100%;
+                    height: max-content;
 
-                    input {
+                    input{
                         width: 100%;
                         border: 1px solid var(--primary-color);
                         padding: 8px 10px;
@@ -100,6 +93,27 @@
                         }
                     }
                 }
+            }
+        }
+
+        .edit {
+            i {
+                font-size: 26px;
+                cursor: pointer;
+                color: var(--primary-color);
+            }
+
+            .btn-success {
+                visibility: hidden;
+                margin-left: 10px;
+
+                &.show {
+                    visibility: visible;
+                }
+            }
+
+            .btn-primary {
+                background-color: var(--primary-color);
             }
         }
     }

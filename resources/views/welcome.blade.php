@@ -100,8 +100,7 @@
                                 </div>
 
                                 <div class="about-img-top">
-                                    <img src="assets/img/about-2.jpg" alt="slide img">
-                                </div>
+                                <p>كلية كير, لتنظيم حجوزات مرضى الفشل الكلوي</p>                                </div>
                             </div>
                         </div>
 
