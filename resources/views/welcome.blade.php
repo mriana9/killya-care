@@ -29,10 +29,13 @@
                         <div class="carousel-caption d-md-block">
                             <h1>مرحبا في كلية كير</h1>
                             <p>المساهمة في تقديم الخدمات الصحية و الاجتماعية و الوقائية لمرضى الفشل الكلوي</p>
-                            <div class="home-page-btn">
-                                <a href="#" class="primarily-button">تسجيل دخول</a>
-                                <a href="#" class="primarily-button"> انشاء حساب</a>
-                            </div>
+
+                            @if(!auth()->check())
+                                <div class="home-page-btn">
+                                    <a href="{{ auth()->check() ? '#' : '/login' }}" class="primarily-button">تسجيل دخول</a>
+                                    <a href="{{ auth()->check() ? '#' : '/register' }}" class="primarily-button"> انشاء حساب</a>
+                                </div>
+                            @endif
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -65,27 +68,53 @@
 
             <!--make-a-appointment-->
             <section class="make-a-appointment">
+
                 <div class="make-a-appointment-box">
-                    <div class="row">
+
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    @if ($errors->any())
+
+                                        <div class="msg-error mt-2 d-flex algin-item-end text-danger">
+                                            <i class='bx bxs-error-circle mx-1 mt-1'></i>
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+
+                    <form class="row"  method="POST" action="{{ route('appointments.store') }}">
+                        @csrf
                         <div class="col-md-4">
-                            <input type="text" placeholder="الاسم الاول">
+                            <input type="text" placeholder="الاسم الاول" name="name" required
+                            {{ auth()->check() ? 'value=' . auth()->user()->name . ' disabled' : '' }}>
                         </div>
                         <div class="col-md-4">
-                            <input type="text" placeholder="الاسم الأخير">
+                            <input type="text" placeholder="الاسم الأخير" name="l_name" required
+                            {{ auth()->check() ? 'value=' . auth()->user()->l_name . ' disabled' : '' }}>
                         </div>
                         <div class="col-md-4">
-                            <input type="text" placeholder="رقم الهاتف">
+                            <input type="text" placeholder="رقم الهاتف" name="phone" required
+                            {{ auth()->check() ? 'value=' . auth()->user()->phone . ' disabled' : '' }}>
                         </div>
                         <div class="col-md-4">
-                            <input type="date"  placeholder=" تاريخ الميلاد">
+                            <input type="date"  placeholder=" تاريخ الميلاد" name="dob" required
+                            {{ auth()->check() ? 'value=' . auth()->user()->dob . ' disabled' : '' }}>
                         </div>
                         <div class="col-md-4">
-                            <input type="datetime-local"  placeholder=" اختار الموعد">
+                            <input type="datetime-local"  placeholder=" اختار الموعد" name="appointment" required>
                         </div>
                         <div class="col-md-4">
-                            <button type="submit"> حجز موعد</button>
+                            <button type="submit" > حجز موعد</button>
                         </div>
-                    </div>
+                    </form>
+
                 </div>
             </section>
 
@@ -119,7 +148,7 @@
                                             <i class='bx bx-check'></i>
                                             مساعدة مرضى غسيل الكلى على اجتياز عقبة المواعيد والأماكن الفارغة على مقاعد الغسيل الكلوي في المستشفى
                                         </div>
-                                        
+
                                         <div class="col-md-6">
                                             <i class='bx bx-check'></i>
                                             العمل على خلق بيئة تفاعلية خاصة بالمرضى والقسم التابعين له لتسهيل عملية التواصل دون تكبد أي عناء أو مشقة
@@ -146,7 +175,7 @@
             <section class="what-we-do">
                 <div class="container h-100">
                     <div class="category">كلية كير  </div>
-                    <h2 class="section-title">أعراض الفشل الكلوي</h2>                    
+                    <h2 class="section-title">أعراض الفشل الكلوي</h2>
                     <div class="row">
                         <div class="col-md-3 text-center">
                             <div class="img-box">
@@ -185,10 +214,14 @@
                 <div class="container">
                    <div class="info">
                         <h2>ابدأ رحلتك العلاجية الان, تواصل معنا واحجز جلستك</h2>
+                        @if(!auth()->check())
+
                         <div class="contact-buttons">
                             <a href="#" class="primarily-button">تسجيل دخول</a>
                             <a href="#" class="primarily-button"> انشاء حساب</a>
                         </div>
+                        @endif
+
                    </div>
                 </div>
             </section>

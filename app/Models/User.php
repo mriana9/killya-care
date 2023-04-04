@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends \TCG\Voyager\Models\User
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -21,7 +21,17 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'id_number',
+        'dob',
+        'phone',
+        'f_name',
+        'g_name',
+        'l_name'
     ];
+    public function appointments()
+    {
+        return $this->hasMany(Appointment::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

@@ -4,16 +4,34 @@
             <div class="row h-100">
                 <div class="h-100 col-md-6 col-sm-12">
                     <ul class="socail-media-link">
+                        @auth
+
+                        <form method="POST" action="{{ route('logout') }}">
                         <li>
-                            <a href="#" target="_blank">
-                                <i class='bx bx-log-in'></i>
-                            </a>
-                        </li>
+                                @csrf
+                                <a href="#" onclick="event.preventDefault(); this.closest('form').submit();">
+                                    <i class='bx bx-log-in'></i>
+                                </a>
+                            </li>
+                        </form>
+                        @endauth
+                        @if (!auth()->check())
+
                         <li>
-                            <a href="#" target="_blank">
+                            <a href="{{ auth()->check() ? '#' : '/register' }}" >
                                 <i class='bx bx-user-plus'></i>
                             </a>
                         </li>
+                        @endif
+
+                        @if (auth()->check())
+
+                        <li>
+                            <a href="{{ auth()->check() ? '/profile' : '#' }}" >
+                                <i class='bx bx-user'></i>
+                            </a>
+                        </li>
+                        @endif
                         <li>
                             <a href="#" target="_blank">
                                 <i class='bx bxl-facebook'></i>

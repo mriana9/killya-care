@@ -65,7 +65,7 @@
                                             <input class="show-input" type="text" placeholder=" تعديل رقم الهاتف ">
                                     </div>
                                 </li>
-                                
+
                                 <li>
                                     <div class="d-flex justify-content-between">
                                         <div class="d-flex align-items-start justify-content-between">
@@ -101,7 +101,7 @@
             </div>
         </section>
         @endsection
-        
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script>
 		$(document).ready(function() {
