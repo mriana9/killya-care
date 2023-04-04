@@ -23,25 +23,40 @@
         <section class="register-form">
             <div class="container">
                 <div class="contact-form">
-                    <form>
+                    @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                    @endif
+                    <form method="POST" action="{{ route('login.submit') }}">
+                       @csrf
                         <div class="row">
                                     <div class="col-md-6 box">
                                         <label>
                                         <span class="text-danger">*</span>
                                              الايميل
                                         </label>
-                                        <input type="text" placeholder="الايميل " require>
+                                        <input type="text" placeholder="الايميل " require name="email">
                                     </div>
                                     <div class="col-md-6 box">
                                         <label>
                                         <span class="text-danger">*</span>
-                                            كلمة المرور 
+                                            كلمة المرور
                                         </label>
-                                        <input type="text" placeholder=" كلمة المرور" require>
+                                        <input type="text" placeholder=" كلمة المرور" require name="password">
                                     </div>
                                     <div class="msg-error mt-2 d-flex algin-item-end text-danger">
-                                        <i class='bx bxs-error-circle mx-1 mt-1'></i>
-                                        رقم الهاتف مطلوب
+                                        @if ($errors->any())
+                                        
+                                        <div class="msg-error mt-2 d-flex algin-item-end text-danger">
+                                            <i class='bx bxs-error-circle mx-1 mt-1'></i>
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
                                     </div>
                                     <div class="col-md-12 box">
                                         <button type="submit"> تسجيل دخول</button>

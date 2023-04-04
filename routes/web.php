@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AppointmentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('users', UserController::class);
+Route::post('/login', [UserController::class, 'login'])->name('login.submit');
+Route::resource('appointments', AppointmentController::class);
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,4 +32,8 @@ Route::get('/login', function () {
 
 Route::get('/profile', function () {
     return view('profile');
+});
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
 });
