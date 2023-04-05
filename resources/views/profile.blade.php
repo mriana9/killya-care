@@ -25,16 +25,16 @@
         <section class="profile-info">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3">
+                    <!-- <div class="col-md-3">
                         <div class="image">
                         <img src="assets/img/user.png" alt="service-img">
                         </div>
-                    </div>
-                    <div class="col-md-9">
+                    </div> -->
+                    <div class="col-md-12">
                         <div class="info">
-                        <div class="edit w-100 d-flex justify-content-end align-items-end" id="edit1">
-                            <button class="btn btn-success save-btn">حفظ</button>
-                            <button class="btn btn-primary">تعديل</button>
+                        <div class="edit w-100 d-flex justify-content-end align-items-end">
+                            <button class="btn btn-success save-btn"  id="edit2">حفظ</button>
+                            <button class="btn btn-primary edit-btn" id="edit1">تعديل</button>
                         </div>
                         <form>
                         <ul class="user-info">
@@ -100,6 +100,88 @@
                 </div>
             </div>
         </section>
+
+        <section class="user-appointments">
+            <div class="container">
+            <div class="info">
+                <h2> جميع الحجوزات الخاصة بك </h2>
+            </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="box">
+                            <h3>الاحد_ 12-4-2023</h3>
+                            <p>9:00 - ص 10:30</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="box">
+                            <h3>الاحد_ 12-4-2023</h3>
+                            <p>9:00 - ص 10:30</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="box">
+                            <h3>الاحد_ 12-4-2023</h3>
+                            <p>9:00 - ص 10:30</p>
+                        </div>
+                    </div>  
+                    <div class="col-md-2">
+                        <div class="box">
+                            <h3>الاحد_ 12-4-2023</h3>
+                            <p>9:00 - ص 10:30</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="box">
+                            <h3>الاحد_ 12-4-2023</h3>
+                            <p>9:00 - ص 10:30</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="box">
+                            <h3>الاحد_ 12-4-2023</h3>
+                            <p>9:00 - ص 10:30</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="box">
+                            <h3>الاحد_ 12-4-2023</h3>
+                            <p>9:00 - ص 10:30</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="box">
+                            <h3>الاحد_ 12-4-2023</h3>
+                            <p>9:00 - ص 10:30</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="box">
+                            <h3>الاحد_ 12-4-2023</h3>
+                            <p>9:00 - ص 10:30</p>
+                        </div>
+                    </div>  
+                    <div class="col-md-2">
+                        <div class="box">
+                            <h3>الاحد_ 12-4-2023</h3>
+                            <p>9:00 - ص 10:30</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="box">
+                            <h3>الاحد_ 12-4-2023</h3>
+                            <p>9:00 - ص 10:30</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="box">
+                            <h3>الاحد_ 12-4-2023</h3>
+                            <p>9:00 - ص 10:30</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         @endsection
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -107,7 +189,11 @@
 		$(document).ready(function() {
 			$("#edit1").click(function() {
 				$(".show-input").toggle();
-                $('.save-btn').toggleClass('show')
+                $('.save-btn').toggleClass('show');
+                $('.edit-btn').toggleClass('show');
+			});
+            $("#edit2").click(function() {
+                $('.edit-btn').toggleClass('show');
 			});
 		});
 	</script>
