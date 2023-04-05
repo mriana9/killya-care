@@ -24,6 +24,16 @@
 
         <section class="profile-info">
             <div class="container">
+                @if ($errors->any())
+                    <div class="msg-error mt-2 d-flex algin-item-end text-danger">
+                        <i class='bx bxs-error-circle mx-1 mt-1'></i>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="row">
                     <!-- <div class="col-md-3">
                         <div class="image">
@@ -36,7 +46,9 @@
                             <button class="btn btn-success save-btn"  id="edit2">حفظ</button>
                             <button class="btn btn-primary edit-btn" id="edit1">تعديل</button>
                         </div>
-                        <form>
+                        <form method="POST" action="{{ route('profile.update') }}">
+                            @csrf
+
                             <ul class="user-info">
                                 <li>
                                     <div class="d-flex justify-content-between">
@@ -48,7 +60,7 @@
                                         </div>
                                     </div>
                                     <div class="edit-input">
-                                        <input class="show-input" type="text" placeholder="تعديل الاسم" value="{{ auth()->user()->name }}">
+                                        <input class="show-input" type="text" placeholder="تعديل الاسم" name="name" value="{{ auth()->user()->name }}">
                                     </div>
                                 </li>
 
@@ -62,7 +74,7 @@
                                         </div>
                                     </div>
                                     <div class="edit-input">
-                                        <input class="show-input" type="text" placeholder="تعديل رقم الهاتف"  value="{{ auth()->user()->phone }}">
+                                        <input class="show-input" type="text" placeholder="تعديل رقم الهاتف" name="phone" value="{{ auth()->user()->phone }}">
                                     </div>
                                 </li>
 
@@ -76,7 +88,7 @@
                                         </div>
                                     </div>
                                     <div class="edit-input">
-                                        <input class="show-input" type="text" placeholder="تعديل رقم الهوية" value="{{ date('F d, Y', strtotime(auth()->user()->id_number)) }}">
+                                        <input class="show-input" type="text" placeholder="تعديل رقم الهوية" name="id_number" value="{{auth()->user()->id_number}}">
                                     </div>
                                 </li>
 
@@ -90,10 +102,13 @@
                                         </div>
                                     </div>
                                     <div class="edit-input">
-                                        <input class="show-input" type="date" placeholder="تعديل تاريخ الميلاد" value="{{ date('F d, Y', strtotime(auth()->user()->dob)) }}">
+                                        <input class="show-input" type="date" placeholder="تعديل تاريخ الميلاد" name="dob" value="{{ date('Y-m-d', strtotime(auth()->user()->dob)) }}">
                                     </div>
                                 </li>
                             </ul>
+
+                            <button type="submit">Save Changes</button>
+
                         </form>
 
                         </div>
