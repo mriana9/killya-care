@@ -97,6 +97,7 @@
         }
 
         .edit {
+            visibility: visible;
             i {
                 font-size: 26px;
                 cursor: pointer;
@@ -106,15 +107,49 @@
             .btn-success {
                 visibility: hidden;
                 margin-left: 10px;
-
-                &.show {
-                    visibility: visible;
-                }
             }
 
             .btn-primary {
                 background-color: var(--primary-color);
             }
+        }
+
+        .edit-btn {
+            &.show {
+                visibility: hidden;
+            }
+        }
+
+        .save-btn {
+            &.show {
+                visibility: hidden;
+            }
+        }
+    }
+}
+
+.user-appointments {
+    padding: 50px 0px;
+    background-color: rgba(13, 57, 120, 0.1);
+
+    .info {
+        font-family: 'El Messiri', sans-serif;
+        h2 {
+            text-align: center;
+        }
+    }
+
+    .box {
+        padding: 20px;
+        margin-top: 20px;
+        background-color: #fff;
+
+        h3 {
+            font-size: 16.5px;
+        }
+
+        p {
+            color: #8f8f8f;
         }
     }
 }
