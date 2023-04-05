@@ -37,13 +37,13 @@
                             <button class="btn btn-primary edit-btn" id="edit1">تعديل</button>
                         </div>
                         <form>
-                        <ul class="user-info">
+                            <ul class="user-info">
                                 <li>
                                     <div class="d-flex justify-content-between">
                                         <div class="d-flex align-items-start justify-content-between">
-                                            <i class='bx bxs-user' ></i>
+                                            <i class='bx bxs-user'></i>
                                             <p class="px-2">
-                                                ماريانا ربحي احمد الغافي
+                                                {{ auth()->user()->name }}
                                             </p>
                                         </div>
                                     </div>
@@ -55,46 +55,47 @@
                                 <li>
                                     <div class="d-flex justify-content-between">
                                         <div class="d-flex align-items-start justify-content-between">
-                                        <i class='bx bxs-phone bx-flip-horizontal' ></i>
-                                        <p class="px-2">
-                                            0591234567
-                                        </p>
+                                            <i class='bx bxs-phone bx-flip-horizontal'></i>
+                                            <p class="px-2">
+                                                {{ auth()->user()->phone }}
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="edit-input" >
-                                            <input class="show-input" type="text" placeholder=" تعديل رقم الهاتف ">
+                                        <input class="show-input" type="text" placeholder=" تعديل رقم الهاتف ">
                                     </div>
                                 </li>
 
                                 <li>
                                     <div class="d-flex justify-content-between">
                                         <div class="d-flex align-items-start justify-content-between">
-                                        <i class='bx bxs-user-detail'></i>
-                                        <p class="px-2">
-                                            404008799
-                                        </p>
+                                            <i class='bx bxs-user-detail'></i>
+                                            <p class="px-2">
+                                                {{ auth()->user()->id_number }}
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="edit-input">
-                                            <input class="show-input" type="text" placeholder=" تعديل رقم الهوية ">
+                                        <input class="show-input" type="text" placeholder=" تعديل رقم الهوية ">
                                     </div>
                                 </li>
 
                                 <li>
                                     <div class="d-flex justify-content-between">
                                         <div class="d-flex align-items-start justify-content-between">
-                                        <i class='bx bx-calendar' ></i>
-                                        <p class="px-2">
-                                            12/6/1980
-                                        </p>
+                                            <i class='bx bx-calendar'></i>
+                                            <p class="px-2">
+                                                {{ auth()->user()->birth_date }}
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="edit-input">
-                                            <input class="show-input" type="text" placeholder=" تعديل تاريخ الميلاد ">
+                                        <input class="show-input" type="text" placeholder=" تعديل تاريخ الميلاد ">
                                     </div>
                                 </li>
                             </ul>
                         </form>
+
                         </div>
                     </div>
                 </div>
@@ -107,78 +108,17 @@
                 <h2> جميع الحجوزات الخاصة بك </h2>
             </div>
                 <div class="row">
-                    <div class="col-md-2">
-                        <div class="box">
-                            <h3>الاحد_ 12-4-2023</h3>
-                            <p>9:00 - ص 10:30</p>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="box">
-                            <h3>الاحد_ 12-4-2023</h3>
-                            <p>9:00 - ص 10:30</p>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="box">
-                            <h3>الاحد_ 12-4-2023</h3>
-                            <p>9:00 - ص 10:30</p>
-                        </div>
-                    </div>  
-                    <div class="col-md-2">
-                        <div class="box">
-                            <h3>الاحد_ 12-4-2023</h3>
-                            <p>9:00 - ص 10:30</p>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="box">
-                            <h3>الاحد_ 12-4-2023</h3>
-                            <p>9:00 - ص 10:30</p>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="box">
-                            <h3>الاحد_ 12-4-2023</h3>
-                            <p>9:00 - ص 10:30</p>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="box">
-                            <h3>الاحد_ 12-4-2023</h3>
-                            <p>9:00 - ص 10:30</p>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="box">
-                            <h3>الاحد_ 12-4-2023</h3>
-                            <p>9:00 - ص 10:30</p>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="box">
-                            <h3>الاحد_ 12-4-2023</h3>
-                            <p>9:00 - ص 10:30</p>
-                        </div>
-                    </div>  
-                    <div class="col-md-2">
-                        <div class="box">
-                            <h3>الاحد_ 12-4-2023</h3>
-                            <p>9:00 - ص 10:30</p>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="box">
-                            <h3>الاحد_ 12-4-2023</h3>
-                            <p>9:00 - ص 10:30</p>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="box">
-                            <h3>الاحد_ 12-4-2023</h3>
-                            <p>9:00 - ص 10:30</p>
-                        </div>
-                    </div>
+
+
+                    @foreach(App\Models\Appointment::where('user_id', auth()->user()->id)
+                            ->orderBy('appointment')->get() as $appointment)
+                            <div class="col-md-2">
+                                <div class="box">
+                                    <h3>{{ \Carbon\Carbon::parse($appointment->appointment)->locale('ar')->isoFormat('dddd DD-M-YYYY') }}</h3>
+                                    <p>{{ \Carbon\Carbon::parse($appointment->appointment)->locale('ar')->isoFormat('h:mm A') }} - {{ \Carbon\Carbon::parse($appointment->appointment)->addHours(1)->addMinutes(30)->locale('ar')->isoFormat('h:mm A') }}</p>
+                                </div>
+                            </div>
+                        @endforeach
                 </div>
             </div>
         </section>
