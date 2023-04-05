@@ -48,7 +48,7 @@
                                         </div>
                                     </div>
                                     <div class="edit-input">
-                                        <input class="show-input" type="text" placeholder=" تعديل الاسم ">
+                                        <input class="show-input" type="text" placeholder="تعديل الاسم" value="{{ auth()->user()->name }}">
                                     </div>
                                 </li>
 
@@ -61,8 +61,8 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="edit-input" >
-                                        <input class="show-input" type="text" placeholder=" تعديل رقم الهاتف ">
+                                    <div class="edit-input">
+                                        <input class="show-input" type="text" placeholder="تعديل رقم الهاتف"  value="{{ auth()->user()->phone }}">
                                     </div>
                                 </li>
 
@@ -76,7 +76,7 @@
                                         </div>
                                     </div>
                                     <div class="edit-input">
-                                        <input class="show-input" type="text" placeholder=" تعديل رقم الهوية ">
+                                        <input class="show-input" type="text" placeholder="تعديل رقم الهوية" value="{{ date('F d, Y', strtotime(auth()->user()->id_number)) }}">
                                     </div>
                                 </li>
 
@@ -85,12 +85,12 @@
                                         <div class="d-flex align-items-start justify-content-between">
                                             <i class='bx bx-calendar'></i>
                                             <p class="px-2">
-                                                {{ auth()->user()->birth_date }}
+                                                {{ date('F d, Y', strtotime(auth()->user()->dob)) }}
                                             </p>
                                         </div>
                                     </div>
                                     <div class="edit-input">
-                                        <input class="show-input" type="text" placeholder=" تعديل تاريخ الميلاد ">
+                                        <input class="show-input" type="date" placeholder="تعديل تاريخ الميلاد" value="{{ date('F d, Y', strtotime(auth()->user()->dob)) }}">
                                     </div>
                                 </li>
                             </ul>
