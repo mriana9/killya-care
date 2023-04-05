@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,11 +29,17 @@ Route::get('/register', function () {
 
 Route::get('/login', function () {
     return view('login');
-});
+})->name('login');
 
-Route::get('/profile', function () {
-    return view('profile');
+
+Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 });
+// Route::get('/profile', function () {
+//     return view('profile');
+// });
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

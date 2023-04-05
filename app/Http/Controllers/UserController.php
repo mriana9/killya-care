@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
 
 class UserController extends Controller
 {
@@ -23,17 +24,22 @@ class UserController extends Controller
                 'g_name.required' => 'يرجى إدخال اسم الجد',
                 'f_name.required' => 'يرجى إدخال اسم الأب',
                 'phone.required' => 'يرجى إدخال رقم الهاتف',
+                'phone.min' => 'يجب أن يكون رقم الهاتف على الأقل 10 أحرف',
                 'dob.required' => 'يرجى إدخال تاريخ الميلاد',
+                'dob.date' => 'يجب أن يكون تاريخ الميلاد بتنسيق صحيح',
+                'dob.before' => 'يجب أن يكون تاريخ الميلاد قبل اليوم الحالي',
                 'email.required' => 'يرجى إدخال البريد الإلكتروني',
                 'email.email' => 'البريد الإلكتروني غير صالح',
                 'email.unique' => 'البريد الإلكتروني مسجل بالفعل',
                 'id_number.required' => 'يرجى إدخال رقم الهوية',
                 'id_number.unique' => 'رقم الهوية مسجل بالفعل',
+                'id_number.min' => 'يجب أن يكون رقم الهوية على الأقل 9 أحرف',
                 'password.required' => 'يرجى إدخال كلمة المرور',
                 'password.min' => 'يجب أن تتكون كلمة المرور من 8 أحرف على الأقل',
                 'con_password.required' => 'يرجى تأكيد كلمة المرور',
                 'con_password.same' => 'كلمة المرور غير متطابقة',
             ];
+
 
             // Validate the form data
             $validator = Validator::make($request->all(), [
@@ -42,8 +48,18 @@ class UserController extends Controller
                 'g_name' => 'required',
                 'f_name' => 'required',
                 'phone' => 'required|min:10',
-                'dob' => 'required',
-                'email' => 'required|email|unique:users',
+                'dob' => [
+                    'required',
+                    function ($attribute, $value, $fail) {
+                        // Convert input date to Carbon instance
+                        $dob = Carbon::parse($value);
+
+                        // Check if input date is equal to today's date or any future date
+                        if ($dob->isToday() || $dob->isFuture()) {
+                            $fail('التاريخ غير صالح ');
+                        }
+                    },
+                ],                'email' => 'required|email|unique:users',
                 'id_number' => 'required|unique:users|min:9',
                 'password' => 'required|min:8',
                 'con_password' => 'required|same:password',
