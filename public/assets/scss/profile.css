@@ -25,9 +25,18 @@
 }
 
 .page-intro .info a {
-  font-size: 22px;
+  font-size: 20px;
   color: #fff;
   text-decoration: none;
+}
+
+.page-intro .info a:hover {
+  text-decoration: underline;
+}
+
+.page-intro .info .breadcrumb-item.active {
+  font-size: 18.5px;
+  color: #fff;
 }
 
 .profile-info {

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
-    <title>كلية كير</title>
+    <title>كلية كير | الرئيسية</title>
     <!-- Pages All Style Links-->
     <link href="/assets/scss/header.css" rel="stylesheet"> <!--header style -->
     <link href="/assets/scss/home-page.css" rel="stylesheet"> <!--pages style -->
@@ -28,7 +28,7 @@
                         <img src="assets/img/1.jpg"  alt="slide-img">
                         <div class="carousel-caption d-md-block">
                             <h1>مرحبا في كلية كير</h1>
-                            <p>المساهمة في تقديم الخدمات الصحية و الاجتماعية و الوقائية لمرضى الفشل الكلوي</p>
+                            <p> المساهمة في تقديم الخدمات الصحية و الاجتماعية و الوقائية لمرضى الفشل الكلوي التابع الى مستشفى ابو حسن القاسم</p>
 
                             @if(!auth()->check())
                                 <div class="home-page-btn">
