@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
-    <title>كلية كير</title>
+    <title>كلية كير | الملف الشخصي</title>
     <!-- Pages All Style Links-->
     <link href="/assets/scss/header.css" rel="stylesheet"> <!--header style -->
     <link href="/assets/scss/profile.css" rel="stylesheet"> <!--pages style -->
@@ -16,10 +16,14 @@
 
         @section('content')
         <section class="page-intro">
-            <div class="info">
-                <h2>صفحة المريض</h2>
-                <a href="#"> <i class='bx bx-home'></i> الرئيسية</a>
-            </div>
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb info">
+                <li class="breadcrumb-item">
+                    <a href="#"> <i class='bx bx-home'></i> الرئيسية</a>
+                </li>
+                <li class="breadcrumb-item active mt-1" aria-current="page">صفحة المريض</li>
+            </ol>
+        </nav>
         </section>
 
         <section class="profile-info">
