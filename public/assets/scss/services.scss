@@ -51,6 +51,10 @@
             &.active {
                 font-size: 18.5px;
                 color: #fff;
+
+                &::before {
+                    color: #fff;
+                }
             }
         }
     }

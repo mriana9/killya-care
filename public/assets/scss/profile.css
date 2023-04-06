@@ -39,6 +39,10 @@
   color: #fff;
 }
 
+.page-intro .info .breadcrumb-item.active::before {
+  color: #fff;
+}
+
 .profile-info {
   padding: 50px 0px;
 }
