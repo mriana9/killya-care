@@ -58,6 +58,10 @@
   color: #fff;
 }
 
+.page-intro .info .breadcrumb-item.active::before {
+  color: #fff;
+}
+
 .our-services {
   padding: 50px 0px;
 }
