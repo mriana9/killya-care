@@ -52,3 +52,11 @@ Route::get('/services', function () {
 Route::get('/about-us', function () {
     return view('about-us');
 });
+
+Route::get('/news', function () {
+    return view('news');
+});
+
+Route::get('/contact-us', function () {
+    return view('contact-us');
+});

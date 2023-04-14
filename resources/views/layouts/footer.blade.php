@@ -11,16 +11,16 @@
                 <ul class="pages-links">
                     <li>الصفحات</li>
                     <li>
-                        <a href="#">من نحن</a>
+                        <a href="{{'/about-us' }}">من نحن</a>
                     </li>
                     <li>
-                        <a href="#"> خدماتنا</a>
+                        <a href="{{'/services' }}"> خدماتنا</a>
                     </li>
                     <li>
-                        <a href="#"> النصائح</a>
+                        <a  href="{{'/news' }}"> النصائح</a>
                     </li>
                     <li>
-                        <a href="#"> اتصل بنا</a>
+                        <a href="{{'/contact-us' }}"> اتصل بنا</a>
                     </li>
                 </ul>
             </div>
