@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.category {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 2px 10px;
+  margin: auto;
+  color: var(--primary-color);
+  border-radius: 4px;
+  background-color: rgba(56, 113, 193, 0.3);
+  font-family: 'El Messiri', sans-serif;
+}
+
+.section-title {
+  font-size: 28px;
+  padding-top: 10px;
+  text-align: center;
+  font-family: 'El Messiri', sans-serif;
+}
+
+.page-intro {
+  height: 50vh;
+  position: relative;
+  background-size: cover;
+  font-family: 'El Messiri', sans-serif;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(13, 57, 120, 0.5)), to(rgba(13, 57, 120, 0.5))), url("../img/1.jpg");
+  background-image: linear-gradient(to bottom, rgba(13, 57, 120, 0.5), rgba(13, 57, 120, 0.5)), url("../img/1.jpg");
+}
+
+.page-intro .info {
+  color: #fff;
+  text-align: start;
+  position: absolute;
+  top: 50%;
+  padding-right: 20px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.page-intro .info a {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.page-intro .info a:hover {
+  text-decoration: underline;
+}
+
+.page-intro .info .breadcrumb-item.active {
+  font-size: 18.5px;
+  color: #fff;
+}
+
+.page-intro .info .breadcrumb-item.active::before {
+  color: #fff;
+}
+
+.contact-us {
+  padding: 50px 0px;
+}
+
+.contact-us input, .contact-us textarea {
+  width: 100%;
+  margin: 10px 0px;
+  border: 1px solid var(--primary-color);
+  padding: 8px 10px;
+  border-radius: 4px;
+  text-align: start;
+  outline: none;
+  caret-color: var(--primary-color);
+}
+
+.contact-us input::-webkit-input-placeholder, .contact-us textarea::-webkit-input-placeholder {
+  color: #000;
+  text-align: start;
+}
+
+.contact-us input:-ms-input-placeholder, .contact-us textarea:-ms-input-placeholder {
+  color: #000;
+  text-align: start;
+}
+
+.contact-us input::-ms-input-placeholder, .contact-us textarea::-ms-input-placeholder {
+  color: #000;
+  text-align: start;
+}
+
+.contact-us input::placeholder, .contact-us textarea::placeholder {
+  color: #000;
+  text-align: start;
+}
+
+.contact-us textarea {
+  min-height: 200px;
+}
+
+.contact-us label {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.contact-us button {
+  width: 100%;
+  border: none;
+  margin: 10px 0px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: var(--primary-color);
+}
+/*# sourceMappingURL=contact.css.map */

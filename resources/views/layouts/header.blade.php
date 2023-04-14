@@ -80,19 +80,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">الرئيسية</a>
+                        <a class="nav-link active" aria-current="page" href="{{'/' }}">الرئيسية</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">من نحن</a>
+                        <a class="nav-link" href="{{'/about-us' }}">من نحن</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">خدماتنا</a>
+                        <a class="nav-link" href="{{'/services' }}">خدماتنا</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">نصائح</a>
+                        <a class="nav-link" href="{{'/news' }}">نصائح</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">اتصل بنا</a>
+                        <a class="nav-link" href="{{'/contact-us' }}">اتصل بنا</a>
                     </li>
                 </ul>
                 <div class="h-100 contact-info d-flex justify-content-center align-items-center">
