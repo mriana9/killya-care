@@ -57,6 +57,14 @@ Route::get('/news', function () {
     return view('news');
 });
 
+Route::get('/news-details', function () {
+    return view('news-details');
+});
+
 Route::get('/contact-us', function () {
     return view('contact-us');
+});
+
+Route::get('/**', function () {
+    return view('not-found');
 });

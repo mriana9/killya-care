@@ -67,6 +67,8 @@
         margin-top: 10px;
         background-color: #fff;
         font-family: 'El Messiri', sans-serif;
+        border: 1px solid #dfdfdf;
+        border-top: none;
 
         .news-image {
             width: 100%;
@@ -133,5 +135,33 @@
             transition: 1s;
             transform: translateY(5px);
         }
+    }
+}
+
+//news-details
+
+.news-details {
+    .news-box {
+        border: none;
+        .news-image {
+            height: 400px;
+        }
+
+        &:hover {
+            transform: translate(0px);
+            box-shadow: none;
+        }
+    }
+
+    .title {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 20px 0px;
+    }
+
+    .description {
+        color: #8f8f8f;
+        padding: 10px 0px;
+        margin-top: 20px;
     }
 }

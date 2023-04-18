@@ -71,6 +71,8 @@
   margin-top: 10px;
   background-color: #fff;
   font-family: 'El Messiri', sans-serif;
+  border: 1px solid #dfdfdf;
+  border-top: none;
 }
 
 .our-news .news-box .news-image {
@@ -148,5 +150,32 @@
   transition: 1s;
   -webkit-transform: translateY(5px);
           transform: translateY(5px);
+}
+
+.news-details .news-box {
+  border: none;
+}
+
+.news-details .news-box .news-image {
+  height: 400px;
+}
+
+.news-details .news-box:hover {
+  -webkit-transform: translate(0px);
+          transform: translate(0px);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.news-details .title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 20px 0px;
+}
+
+.news-details .description {
+  color: #8f8f8f;
+  padding: 10px 0px;
+  margin-top: 20px;
 }
 /*# sourceMappingURL=news.css.map */
