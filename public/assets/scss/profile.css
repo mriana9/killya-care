@@ -43,142 +43,57 @@
   color: #fff;
 }
 
-.profile-info {
+.user-profile {
   padding: 50px 0px;
-}
-
-.profile-info .image {
-  height: 250px;
-  width: 100%;
-}
-
-.profile-info .image img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: fill;
-     object-fit: fill;
-}
-
-.profile-info .info .user-info {
-  padding-top: 10px;
-  list-style: none;
-}
-
-.profile-info .info .user-info li {
-  font-size: 20px;
-  padding-top: 2px;
-  font-weight: 400;
-  border-bottom: 1px solid #ccc;
-}
-
-.profile-info .info .user-info li i {
-  font-size: 24px;
-  color: var(--primary-color);
-}
-
-.profile-info .info .user-info li p {
-  font-size: 16px;
-  color: var(--light-text-color);
-}
-
-.profile-info .info .user-info li:hover {
-  border-bottom: 1px solid var(--light-text-color);
-}
-
-.profile-info .info .user-info li:hover .edit i {
-  visibility: visible;
-}
-
-.profile-info .info .user-info li .edit-input, .profile-info .info .user-info li #show-input1 {
-  width: 100%;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-}
-
-.profile-info .info .user-info li .edit-input input, .profile-info .info .user-info li #show-input1 input {
-  width: 100%;
-  border: 1px solid var(--primary-color);
-  padding: 8px 10px;
-  border-radius: 4px;
-  text-align: start;
-  margin-bottom: 5px;
-  outline: none;
-  display: none;
-  caret-color: var(--primary-color);
-}
-
-.profile-info .info .user-info li .edit-input input::-webkit-input-placeholder, .profile-info .info .user-info li #show-input1 input::-webkit-input-placeholder {
-  color: #ccc;
-  text-align: start;
-}
-
-.profile-info .info .user-info li .edit-input input:-ms-input-placeholder, .profile-info .info .user-info li #show-input1 input:-ms-input-placeholder {
-  color: #ccc;
-  text-align: start;
-}
-
-.profile-info .info .user-info li .edit-input input::-ms-input-placeholder, .profile-info .info .user-info li #show-input1 input::-ms-input-placeholder {
-  color: #ccc;
-  text-align: start;
-}
-
-.profile-info .info .user-info li .edit-input input::placeholder, .profile-info .info .user-info li #show-input1 input::placeholder {
-  color: #ccc;
-  text-align: start;
-}
-
-.profile-info .info .edit {
-  visibility: visible;
-}
-
-.profile-info .info .edit i {
-  font-size: 26px;
-  cursor: pointer;
-  color: var(--primary-color);
-}
-
-.profile-info .info .edit .btn-success {
-  visibility: hidden;
-  margin-left: 10px;
-}
-
-.profile-info .info .edit .btn-primary {
-  background-color: var(--primary-color);
-}
-
-.profile-info .info .edit-btn.show {
-  visibility: hidden;
-}
-
-.profile-info .info .save-btn.show {
-  visibility: hidden;
-}
-
-.user-appointments {
-  padding: 50px 0px;
-  background-color: rgba(13, 57, 120, 0.1);
-}
-
-.user-appointments .info {
+  background-color: #ccc;
   font-family: 'El Messiri', sans-serif;
 }
 
-.user-appointments .info h2 {
-  text-align: center;
-}
-
-.user-appointments .box {
-  padding: 20px;
-  margin-top: 20px;
+.user-profile .profile-card {
+  position: relative;
+  min-height: 300px;
   background-color: #fff;
+  -webkit-box-shadow: rgba(25, 25, 25, 0.04) 0 0 5px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+          box-shadow: rgba(25, 25, 25, 0.04) 0 0 5px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0;
 }
 
-.user-appointments .box h3 {
-  font-size: 16.5px;
+.user-profile .profile-card .profile-card-header {
+  color: #fff;
+  padding: 20px;
+  font-size: 18px;
+  text-align: center;
+  background-color: var(--primary-color);
 }
 
-.user-appointments .box p {
-  color: #8f8f8f;
+.user-profile .profile-card .card-info {
+  position: relative;
+  padding: 20px;
+}
+
+.user-profile .profile-card .card-info i {
+  color: var(--primary-color);
+}
+
+.user-profile .profile-card .card-icon {
+  position: absolute;
+  left: 50%;
+  top: 80px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #fff;
+  -webkit-box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+          box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0;
 }
 /*# sourceMappingURL=profile.css.map */

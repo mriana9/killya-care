@@ -215,5 +215,16 @@
         @endsection
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+            let current = location.pathname;
+            $('a[href$="' + location.pathname + '"]').addClass('active');
+
+            if (current == '/' || current == '/home' || current == '/services' || current == '/about-us' 
+                current == '/news' || current == '/news-details' || current == '/contact-us') {
+                $('#navbar li .nav-link').addClass('active');
+            }
+            });
+        </script>
     </body>
 </html>
