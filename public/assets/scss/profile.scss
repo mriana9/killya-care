@@ -231,3 +231,36 @@
         }
     }
 }
+
+.make-a-appointment-box {
+    padding: 40px;
+    background-color: #fff;
+    font-family: 'El Messiri', sans-serif;
+
+
+    input {
+        width: 100%;
+        margin: 10px 0px;
+        border: 1px solid var(--primary-color);
+        padding: 8px 10px;
+        border-radius: 4px;
+        text-align: start;
+        outline: none;
+        caret-color: var(--primary-color);
+
+        &::placeholder {
+            color: #000;
+            text-align: start;
+        }
+    }
+
+    button {
+        width: 100%;
+        border: none;
+        margin: 10px 0px;
+        padding: 8px 10px;
+        border-radius: 4px;
+        color: #fff;
+        background-color: var(--primary-color);
+    }
+}
