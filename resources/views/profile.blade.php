@@ -95,6 +95,8 @@
                                     @endforeach
                                     </div>
                             </div>
+                            <a href="" class="primarily-button"> حجز موعد</a>
+
                         </div>
                     </div>
                     
@@ -109,6 +111,7 @@
                             <div class="card-info">
                                     لا يوجد رسائل حاليا
                             </div>
+                            <a href="" class="primarily-button"> ارسال رسالة</a>
                         </div>
                     </div>
                 </div>
