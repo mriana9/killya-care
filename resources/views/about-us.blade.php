@@ -20,7 +20,7 @@
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb info">
                 <li class="breadcrumb-item">
-                    <a href="#"> <i class='bx bx-home'></i> الرئيسية</a>
+                    <a href="{{'/' }}"> <i class='bx bx-home'></i> الرئيسية</a>
                 </li>
                 <li class="breadcrumb-item active mt-1" aria-current="page">من نحن</li>
             </ol>

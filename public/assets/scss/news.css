@@ -71,6 +71,8 @@
   margin-top: 10px;
   background-color: #fff;
   font-family: 'El Messiri', sans-serif;
+  border: 1px solid #dfdfdf;
+  border-top: none;
 }
 
 .our-news .news-box .news-image {
@@ -148,5 +150,108 @@
   transition: 1s;
   -webkit-transform: translateY(5px);
           transform: translateY(5px);
+}
+
+.news-details .news-box {
+  border: none;
+}
+
+.news-details .news-box .news-image {
+  height: 400px;
+}
+
+.news-details .news-box:hover {
+  -webkit-transform: translate(0px);
+          transform: translate(0px);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.news-details .title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 20px 0px;
+}
+
+.news-details .description {
+  color: #8f8f8f;
+  padding: 10px 0px;
+  margin-top: 20px;
+}
+
+.comments .title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 20px 0px;
+  border-bottom: 1px solid #ccc;
+}
+
+.comments .comment-box {
+  background-color: #ccc;
+  margin: 20px 0px;
+  padding: 20px;
+}
+
+.comments .comment-box .user-name {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.comments .form-comments textarea {
+  width: 100%;
+  margin: 10px 0px;
+  border: 1px solid var(--primary-color);
+  padding: 8px 10px;
+  border-radius: 4px;
+  text-align: start;
+  outline: none;
+  min-height: 200px;
+  caret-color: var(--primary-color);
+}
+
+.comments .form-comments textarea::-webkit-input-placeholder {
+  color: #000;
+  text-align: start;
+}
+
+.comments .form-comments textarea:-ms-input-placeholder {
+  color: #000;
+  text-align: start;
+}
+
+.comments .form-comments textarea::-ms-input-placeholder {
+  color: #000;
+  text-align: start;
+}
+
+.comments .form-comments textarea::placeholder {
+  color: #000;
+  text-align: start;
+}
+
+.comments .form-comments label {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.comments .form-comments button {
+  width: 100%;
+  border: none;
+  margin: 10px 0px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: var(--primary-color);
+}
+
+@media screen and (max-width: 1024px) {
+  .our-news {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  .our-news .news-box {
+    margin-bottom: 20px;
+  }
 }
 /*# sourceMappingURL=news.css.map */

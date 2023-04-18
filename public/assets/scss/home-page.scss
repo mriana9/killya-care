@@ -428,4 +428,16 @@
             }
         }
     }
+
+    .contact-us {
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+
+            a {
+                display: inline-block;
+                margin-top: 10px;
+            }
+        }
+    }
 }

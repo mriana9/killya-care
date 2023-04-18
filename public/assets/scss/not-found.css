@@ -1,0 +1,71 @@
+.page-intro {
+  height: 50vh;
+  position: relative;
+  background-size: cover;
+  font-family: 'El Messiri', sans-serif;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(13, 57, 120, 0.5)), to(rgba(13, 57, 120, 0.5))), url("../img/1.jpg");
+  background-image: linear-gradient(to bottom, rgba(13, 57, 120, 0.5), rgba(13, 57, 120, 0.5)), url("../img/1.jpg");
+}
+
+.page-intro .info {
+  color: #fff;
+  text-align: start;
+  position: absolute;
+  top: 50%;
+  padding-right: 20px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.page-intro .info a {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.page-intro .info a:hover {
+  text-decoration: underline;
+}
+
+.page-intro .info .breadcrumb-item.active {
+  font-size: 18.5px;
+  color: #fff;
+}
+
+.page-intro .info .breadcrumb-item.active::before {
+  color: #fff;
+}
+
+.not-found h1 {
+  text-align: center;
+  font-size: 102px;
+  color: var(--primary-color);
+}
+
+.not-found p {
+  color: #8f8f8f;
+  text-align: center;
+}
+
+.not-found .back-to-home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px 0px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.not-found .back-to-home .primarily-button {
+  text-decoration: none;
+  padding: 5px 20px;
+  color: var(--primary-color);
+  border-radius: 6px;
+  border: 1px solid var(--primary-color);
+}
+
+.not-found .back-to-home .primarily-button:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=not-found.css.map */

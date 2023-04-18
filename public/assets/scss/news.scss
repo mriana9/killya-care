@@ -67,6 +67,8 @@
         margin-top: 10px;
         background-color: #fff;
         font-family: 'El Messiri', sans-serif;
+        border: 1px solid #dfdfdf;
+        border-top: none;
 
         .news-image {
             width: 100%;
@@ -132,6 +134,96 @@
             box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0;
             transition: 1s;
             transform: translateY(5px);
+        }
+    }
+}
+
+//news-details
+
+.news-details {
+    .news-box {
+        border: none;
+        .news-image {
+            height: 400px;
+        }
+
+        &:hover {
+            transform: translate(0px);
+            box-shadow: none;
+        }
+    }
+
+    .title {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 20px 0px;
+    }
+
+    .description {
+        color: #8f8f8f;
+        padding: 10px 0px;
+        margin-top: 20px;
+    }
+}
+
+.comments {
+    .title {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 20px 0px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .comment-box {
+        background-color: #ccc;
+        margin: 20px 0px;
+        padding: 20px;
+
+        .user-name {
+            font-weight: 600;
+            font-size: 20px;
+        }
+    }
+
+    .form-comments {
+        textarea{
+            width: 100%;
+            margin: 10px 0px;
+            border: 1px solid var(--primary-color);
+            padding: 8px 10px;
+            border-radius: 4px;
+            text-align: start;
+            outline: none;
+            min-height: 200px;
+            caret-color: var(--primary-color);
+    
+            &::placeholder {
+                color: #000;
+                text-align: start;
+            }
+        }
+        label {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        button {
+            width: 100%;
+            border: none;
+            margin: 10px 0px;
+            padding: 8px 10px;
+            border-radius: 4px;
+            color: #fff;
+            background-color: var(--primary-color);
+        }
+    }
+}
+
+//Responsive styles
+@media screen and (max-width: 1024px) {
+    .our-news {
+        height: max-content;
+        .news-box {
+            margin-bottom: 20px;
         }
     }
 }
