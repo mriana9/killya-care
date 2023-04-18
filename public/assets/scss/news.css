@@ -178,4 +178,15 @@
   padding: 10px 0px;
   margin-top: 20px;
 }
+
+@media screen and (max-width: 1024px) {
+  .our-news {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  .our-news .news-box {
+    margin-bottom: 20px;
+  }
+}
 /*# sourceMappingURL=news.css.map */

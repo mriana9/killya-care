@@ -65,6 +65,6 @@ Route::get('/contact-us', function () {
     return view('contact-us');
 });
 
-Route::get('/**', function () {
+Route::get('/not-found', function () {
     return view('not-found');
 });
