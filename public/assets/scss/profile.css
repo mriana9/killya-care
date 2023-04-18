@@ -45,13 +45,14 @@
 
 .user-profile {
   padding: 50px 0px;
-  background-color: #ccc;
   font-family: 'El Messiri', sans-serif;
 }
 
 .user-profile .profile-card {
   position: relative;
+  padding-bottom: 100px;
   min-height: 300px;
+  position: relative;
   background-color: #fff;
   -webkit-box-shadow: rgba(25, 25, 25, 0.04) 0 0 5px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0;
           box-shadow: rgba(25, 25, 25, 0.04) 0 0 5px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0;
@@ -95,5 +96,69 @@
   background-color: #fff;
   -webkit-box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0;
           box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+}
+
+.user-profile .profile-card .primarily-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  text-decoration: none;
+  padding: 5px 20px;
+  color: #fff;
+  border-radius: 6px;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.user-profile .profile-card .primarily-button:hover {
+  color: var(--primary-color);
+  background-color: #fff;
+}
+
+.make-a-appointment-box {
+  padding: 40px;
+  background-color: #fff;
+  font-family: 'El Messiri', sans-serif;
+}
+
+.make-a-appointment-box input {
+  width: 100%;
+  margin: 10px 0px;
+  border: 1px solid var(--primary-color);
+  padding: 8px 10px;
+  border-radius: 4px;
+  text-align: start;
+  outline: none;
+  caret-color: var(--primary-color);
+}
+
+.make-a-appointment-box input::-webkit-input-placeholder {
+  color: #000;
+  text-align: start;
+}
+
+.make-a-appointment-box input:-ms-input-placeholder {
+  color: #000;
+  text-align: start;
+}
+
+.make-a-appointment-box input::-ms-input-placeholder {
+  color: #000;
+  text-align: start;
+}
+
+.make-a-appointment-box input::placeholder {
+  color: #000;
+  text-align: start;
+}
+
+.make-a-appointment-box button {
+  width: 100%;
+  border: none;
+  margin: 10px 0px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: var(--primary-color);
 }
 /*# sourceMappingURL=profile.css.map */

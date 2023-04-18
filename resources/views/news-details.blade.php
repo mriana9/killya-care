@@ -66,12 +66,12 @@
             <div class="container">
                 <div class="title"> 2 تعليقات</div>
                 <div class="comment-box">
-                    <div class="user-name"> <i class="bx bx-user"></i>ماريانا الغافي</div>
+                    <div class="user-name"> <i class="bx bx-user"></i> المسؤرل</div>
                     <div class="user-comment">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia modi non laudantium consectetur dolorum culpa.</div>
                 </div>
 
                 <div class="comment-box">
-                    <div class="user-name"> <i class="bx bx-user"></i>ماريانا الغافي</div>
+                    <div class="user-name"> <i class="bx bx-user"></i>المسؤول</div>
                     <div class="user-comment">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia modi non laudantium consectetur dolorum culpa.</div>
                 </div>
 

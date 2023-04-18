@@ -95,6 +95,8 @@
                                     @endforeach
                                     </div>
                             </div>
+                            <button class="primarily-button" data-bs-toggle="modal" data-bs-target="#exampleModal"> حجز موعد</button>
+
                         </div>
                     </div>
                     
@@ -109,11 +111,76 @@
                             <div class="card-info">
                                     لا يوجد رسائل حاليا
                             </div>
+                            <a href="{{'/contact-us' }}" class="primarily-button"> ارسال رسالة</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+            <div class="modal-content ">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> حجز موعد</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <div class="make-a-appointment-box">
+
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if ($errors->any())
+
+                    <div class="msg-error mt-2 d-flex algin-item-end text-danger">
+                        <i class='bx bxs-error-circle mx-1 mt-1'></i>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <form class="row"  method="POST" action="{{ route('appointments.store') }}">
+                    @csrf
+                    <div class="col-md-6">
+                        <input type="text" placeholder="الاسم الاول" name="name" required
+                        {{ auth()->check() ? 'value=' . auth()->user()->name . ' disabled' : '' }}>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" placeholder="الاسم الأخير" name="l_name" required
+                        {{ auth()->check() ? 'value=' . auth()->user()->l_name . ' disabled' : '' }}>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" placeholder="رقم الهاتف" name="phone" required
+                        {{ auth()->check() ? 'value=' . auth()->user()->phone . ' disabled' : '' }}>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="date"  placeholder=" تاريخ الميلاد" name="dob" required
+                        {{ auth()->check() ? 'value=' . auth()->user()->dob . ' disabled' : '' }}>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="datetime-local"  placeholder=" اختار الموعد" name="appointment" required>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" > حجز موعد</button>
+                    </div>
+                </form>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">اغلاق</button>
+            </div>
+            </div>
+        </div>
+        </div>
         @endsection
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
