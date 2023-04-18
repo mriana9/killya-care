@@ -36,7 +36,7 @@
                                         <span class="text-danger">*</span>
                                              الايميل
                                         </label>
-                                        <input type="text" placeholder="الايميل " require name="email">
+                                        <input type="text" placeholder="رقم الهاتف " require name="text">
                                     </div>
                                     <div class="col-md-6 box">
                                         <label>
