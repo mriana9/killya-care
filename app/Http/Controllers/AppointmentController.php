@@ -54,7 +54,7 @@ class AppointmentController extends Controller
         ]);
     }
 
-    return redirect('/')->with('success', 'تم انشاء الموعد بنجاح');
+    return redirect()->route('profile')->with('success', 'تم انشاء الموعد بنجاح');
 }
 
 

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\Contact;
+use App\Models\AMedical;
+use App\Models\Comment;
 class ProfileController extends Controller
 {
     public function __construct()
@@ -16,6 +18,98 @@ class ProfileController extends Controller
     {
         return view('profile');
     }
+
+
+    public function contact(Request $request)
+    {
+        $messages = [
+            'name.required' => 'حقل الاسم مطلوب',
+            'phone.required' => 'حقل رقم الهاتف مطلوب',
+            'message.required' => 'حقل الرسالة مطلوب',
+        ];
+
+        // $validatedData = $request->validate([
+        //     'name' => 'required',
+        //     'phone' => 'required',
+        //     'message' => 'required',
+        // ], $messages);
+
+
+
+        if (auth()->check()) {
+            $request->validate([
+                'message' => 'required'
+            ], $messages);
+
+            $appointment = Contact::create([
+                'name' => auth()->user()->name . auth()->user()->l_name,
+                'phone' => auth()->user()->phone,
+                'user_id' => auth()->user()->id,
+                'message' => $request->input('message')
+            ]);
+        } else {
+            $request->validate([
+                'name' => 'required',
+                'phone' =>'required',
+                'message' => 'required|date'
+            ], $messages);
+
+            $appointment = Contact::create([
+                'name' => $request->input('name'),
+                'phone' => $request->input('phone'),
+                'message' => $request->input('message   ')
+            ]);
+        }
+        // Store the form data in the database or take other actions
+
+        return redirect()->route('profile')->with('success', 'تم ارسال الرسالة بنجاح');    }
+
+
+
+        public function show ($id){
+
+            $advise = AMedical::where('id',$id)->first();
+            return view('news-details',compact(['advise']));
+
+        }
+
+        public function comment(Request $request)
+        {
+            // Retrieve form data
+            $messages = [
+                'comment.required' => 'حقل التعليق مطلوب',
+            ];
+
+            // Validate form data
+
+
+            $comment = $request->input('comment');
+
+
+            if (auth()->check()) {
+                $this->validate($request, [
+                    'comment' => 'required',
+                ], $messages);
+
+
+                $appointment = Comment::create([
+                    'comment' => $request->input('comment'),
+                    'user_id' => auth()->user()->id,
+                    'news_id' => $request->input('news_id')
+                ]);
+            } else {
+                $this->validate($request, [
+                    'comment' => 'required',
+                ], $messages);
+
+                $appointment = Comment::create([
+                    'comment' => $request->input('comment'),
+                    'news_id' => $request->input('news_id')
+                ]);
+            }
+            return redirect()->back();
+        }
+
 
     public function update(Request $request)
     {

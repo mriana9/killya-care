@@ -24,7 +24,7 @@
                 <li class="breadcrumb-item">
                     <a href="{{'/news' }}"> نصائحنا</a>
                 </li>
-                <li class="breadcrumb-item active mt-1" aria-current="page"> أسباب الفشل الكلوي</li>
+                <li class="breadcrumb-item active mt-1" aria-current="page"> {{$advise->title}}  </li>
             </ol>
             </nav>
         </section>
@@ -34,27 +34,12 @@
             <div class="row">
                     <div class="col-md-12">
                         <div class="news-box">
-                            <div class="title">أسباب الفشل الكلوي</div>
+                            <div class="title"> {{$advise->title}} </div>
                             <div class="news-image">
-                            <img src="assets/img/blog2.jpg" alt="about-img">
+                                <img src="{{ asset('storage/' . $advise->image) }}" alt="about-img">
                             </div>
                             <div class="description">
-                                    حدث الفشل الكلوي الحاد عندما تعجز الكلى فجأةً عن تنقية الفضلات من الدم. وعندما تفقد الكليتان وظيفتهما على القيام بعملية التنقية، فقد تتزايد مستويات الفضلات الخطرة مما قد يتسبب في إحداث خلل بالتركيب الكيميائي للدم.
-                            </div>
-                            <div class="description">
-                                حدث الفشل الكلوي الحاد عندما تعجز الكلى فجأةً عن تنقية الفضلات من الدم. وعندما تفقد الكليتان وظيفتهما على القيام بعملية التنقية، فقد تتزايد مستويات الفضلات الخطرة مما قد يتسبب في إحداث خلل بالتركيب الكيميائي للدم.
-                            </div>
-                            <div class="description">
-                                    حدث الفشل الكلوي الحاد عندما تعجز الكلى فجأةً عن تنقية الفضلات من الدم. وعندما تفقد الكليتان وظيفتهما على القيام بعملية التنقية، فقد تتزايد مستويات الفضلات الخطرة مما قد يتسبب في إحداث خلل بالتركيب الكيميائي للدم.
-                            </div>
-                            <div class="description">
-                                حدث الفشل الكلوي الحاد عندما تعجز الكلى فجأةً عن تنقية الفضلات من الدم. وعندما تفقد الكليتان وظيفتهما على القيام بعملية التنقية، فقد تتزايد مستويات الفضلات الخطرة مما قد يتسبب في إحداث خلل بالتركيب الكيميائي للدم.
-                            </div>
-                            <div class="description">
-                                    حدث الفشل الكلوي الحاد عندما تعجز الكلى فجأةً عن تنقية الفضلات من الدم. وعندما تفقد الكليتان وظيفتهما على القيام بعملية التنقية، فقد تتزايد مستويات الفضلات الخطرة مما قد يتسبب في إحداث خلل بالتركيب الكيميائي للدم.
-                            </div>
-                            <div class="description">
-                                حدث الفشل الكلوي الحاد عندما تعجز الكلى فجأةً عن تنقية الفضلات من الدم. وعندما تفقد الكليتان وظيفتهما على القيام بعملية التنقية، فقد تتزايد مستويات الفضلات الخطرة مما قد يتسبب في إحداث خلل بالتركيب الكيميائي للدم.
+                                {{$advise->body}}
                             </div>
                         </div>
                     </div>
@@ -62,23 +47,36 @@
             </div>
         </section>
 
+
+
         <section class="comments">
             <div class="container">
-                <div class="title"> 2 تعليقات</div>
+                <div class="title"> {{ $advise->comments->count() }} تعليقات</div>
+                @foreach($advise->comments as $comment)
                 <div class="comment-box">
-                    <div class="user-name"> <i class="bx bx-user"></i> المسؤرل</div>
-                    <div class="user-comment">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia modi non laudantium consectetur dolorum culpa.</div>
+                    <div class="user-name"> <i class="bx bx-user"></i> {{ $comment->user->name }}</div>
+                    <div class="user-comment">{{ $comment->comment }}</div>
                 </div>
+                @endforeach
 
-                <div class="comment-box">
-                    <div class="user-name"> <i class="bx bx-user"></i>المسؤول</div>
-                    <div class="user-comment">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia modi non laudantium consectetur dolorum culpa.</div>
-                </div>
 
                 <div class="form-comments">
-                    <form>
-                        <textarea placeholder="اكتب تعليقك هنا"></textarea>
-                        <button type="submit">  ارسال</button>
+                    @if ($errors->any())
+
+                    <div class="msg-error mt-2 d-flex algin-item-end text-danger">
+                        <i class='bx bxs-error-circle mx-1 mt-1'></i>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                    <form action="{{ route('comment') }}" method="post">
+                        @csrf <!-- Add CSRF token for security -->
+                        <input type="text" hidden value="{{$advise->id}}" name="news_id">
+                        <textarea name="comment" placeholder="اكتب تعليقك هنا"></textarea>
+                        <button type="submit">ارسال</button>
                     </form>
                 </div>
             </div>
