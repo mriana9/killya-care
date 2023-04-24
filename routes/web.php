@@ -14,6 +14,14 @@ use App\Http\Controllers\ProfileController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
+
+Route::get('link', function () {Artisan::call('storage:link');
+});
+
+
 Route::resource('users', UserController::class);
 Route::post('/login', [UserController::class, 'login'])->name('login.submit');
 Route::resource('appointments', AppointmentController::class);
