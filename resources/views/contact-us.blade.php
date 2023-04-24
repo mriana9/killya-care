@@ -30,29 +30,48 @@
             <div class="container">
             <div class="category">كلية كير</div>
             <h2 class="section-title">   كيف يمكننا مساعدتك تواصل معنا الان </h2>
-            <form>
+            <form action="{{ route('contact') }}" method="POST">
+                @csrf
                 <div class="row">
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                     <div class="col-md-12 box">
                         <label>
                             <span class="text-danger">*</span>
                             الاسم الرباعي
                         </label>
-                        <input type="text" required name="name" value="{{ old('name') }}">
+                        <input type="text" required name="name" value="{{ auth()->check() ? auth()->user()->name . ' ' . auth()->user()->l_name : '' }}" {{ auth()->check() ? 'disabled' : '' }}>
+
                     </div>
                     <div class="col-md-12 box">
                         <label>
                             <span class="text-danger">*</span>
-                            رقم الهاتف       
+                            رقم الهاتف
                         </label>
-                        <input type="text" required name="l_name" value="{{ old('l_name') }}">
+                        <input type="text" required name="phone"
+                        {{ auth()->check() ? 'value=' . auth()->user()->phone . ' disabled' : '' }}>
                     </div>
                     <div class="col-md-12 box">
                         <label>
                             <span class="text-danger">*</span>
                             الرسالة
                         </label>
-                        <textarea placeholder="اكتب رسالتك هنا"></textarea>
+                        <textarea name="message" placeholder="اكتب رسالتك هنا"></textarea>
                     </div>
+                    @if ($errors->any())
+
+                                            <div class="msg-error mt-2 d-flex algin-item-end text-danger">
+                                                <i class='bx bxs-error-circle mx-1 mt-1'></i>
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
                     <div class="col-md-12 box">
                         <button type="submit">  ارسال</button>
                     </div>

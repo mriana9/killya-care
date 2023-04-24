@@ -36,18 +36,18 @@
                                         <span class="text-danger">*</span>
                                              الايميل
                                         </label>
-                                        <input type="text" placeholder="رقم الهاتف " require name="text">
+                                        <input type="text" placeholder="الايميل  " required name="email">
                                     </div>
                                     <div class="col-md-6 box">
                                         <label>
                                         <span class="text-danger">*</span>
                                             كلمة المرور
                                         </label>
-                                        <input type="text" placeholder=" كلمة المرور" require name="password">
+                                        <input type="text" placeholder=" كلمة المرور" required name="password">
                                     </div>
                                     <div class="msg-error mt-2 d-flex algin-item-end text-danger">
                                         @if ($errors->any())
-                                        
+
                                         <div class="msg-error mt-2 d-flex algin-item-end text-danger">
                                             <i class='bx bxs-error-circle mx-1 mt-1'></i>
                                             <ul>

@@ -14,10 +14,21 @@ use App\Http\Controllers\ProfileController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
+
+Route::get('link', function () {Artisan::call('storage:link');
+});
+
+
 Route::resource('users', UserController::class);
 Route::post('/login', [UserController::class, 'login'])->name('login.submit');
 Route::resource('appointments', AppointmentController::class);
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+Route::post('/contact', [ProfileController::class,'contact'])->name('contact');
+Route::get('/news-details/{id}', [ProfileController::class,'show'])->name('news-details');
+Route::post('/comment', [ProfileController::class,'comment'])->name('comment');
 
 Route::get('/', function () {
     return view('welcome');

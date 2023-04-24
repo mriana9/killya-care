@@ -99,7 +99,7 @@
 
                         </div>
                     </div>
-                    
+
                     <div class="col-md-12 mt-3">
                         <div class="profile-card">
                             <div class="profile-card-header">
@@ -109,11 +109,23 @@
                             <i class='bx bx-chat'></i>
                             </div>
                             <div class="card-info">
-                                    لا يوجد رسائل حاليا
+                                @foreach(App\Models\Contact::where('user_id', auth()->user()->id)->orderBy('created_at')->get() as $contact)
+                                    <div class="col-md-12">
+                                        <div class="box pt-4" style="direction: rtl; text-align: right;">
+                                            <p > السؤال : {{$contact->message}}</p>
+                                            @if($contact->answer)
+                                                <p >الجواب: {{$contact->answer->answers}}</p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                @endforeach
+
                             </div>
                             <a href="{{'/contact-us' }}" class="primarily-button"> ارسال رسالة</a>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </section>

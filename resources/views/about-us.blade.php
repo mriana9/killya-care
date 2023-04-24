@@ -83,36 +83,18 @@
             <h2 class="section-title">ما الخدمات التي نقدمها</h2>
             <div class="container">
                 <div class="row">
+                    @foreach(App\Models\Service::all() as $serv)
                     <div class="col-md-4">
                         <div class="service-box">
                             <div class="service-img">
-                                <img src="assets/img/service1.jpg" alt="about-img">
-                            </div>
+                                <img src="storage/{{ $serv->image }}">
+                           </div>
                             <div class="service-info">
-                                الحصول على استشارة 
+                                {{$serv->title}}
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="service-box">
-                            <div class="service-img">
-                                <img src="assets/img/service2.jpg" alt="about-img">
-                            </div>
-                            <div class="service-info">
-                                 تقديم الوقاية لمرضى الفشل الكلوي
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service-box">
-                            <div class="service-img">
-                                <img src="assets/img/service3.jpg" alt="about-img">
-                            </div>
-                            <div class="service-info">
-                                حجز موعد الجلسة 
-                            </div>
-                        </div>
-                    </div>
+                @endforeach
                 </div>
             </div>
         </section>
