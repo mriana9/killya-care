@@ -59,7 +59,8 @@ class UserController extends Controller
                             $fail('التاريخ غير صالح ');
                         }
                     },
-                ],                'email' => 'required|email|unique:users',
+                ],
+                'email' => 'required|email|unique:users',
                 'id_number' => 'required|unique:users|min:9',
                 'password' => 'required|min:8',
                 'con_password' => 'required|same:password',

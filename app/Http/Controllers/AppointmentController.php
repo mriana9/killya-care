@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Appointment;
+use Carbon\Carbon;
 
 
 
@@ -25,7 +26,18 @@ class AppointmentController extends Controller
 
     if (auth()->check()) {
         $request->validate([
-            'appointment' => 'required|date'
+            'appointment' => [
+                'required',
+                function ($attribute, $value, $fail) {
+                    // Convert input date to Carbon instance
+                    $dob = Carbon::parse($value);
+
+                    // Check if input date is equal to today's date or any future date
+                    if ($dob->isToday() || $dob->isPast()) {
+                        $fail('  يجب الا يكون التاريخ في الماضي ');
+                    }
+                },
+            ],
         ], $messages);
 
         $appointment = Appointment::create([
@@ -34,7 +46,8 @@ class AppointmentController extends Controller
             'phone' => auth()->user()->phone,
             'dob' => auth()->user()->dob,
             'user_id' =>auth()->user()->id,
-            'appointment' => $request->input('appointment')
+            'appointment' => $request->input('appointment'),
+
         ]);
     } else {
         $request->validate([
@@ -42,7 +55,19 @@ class AppointmentController extends Controller
             'l_name' => 'required',
             'dob' => 'required|date',
             'phone' =>'required',
-            'appointment' => 'required|date'
+            'appointment' => [
+                'required',
+                function ($attribute, $value, $fail) {
+                    // Convert input date to Carbon instance
+                    $dob = Carbon::parse($value);
+
+                    // Check if input date is equal to today's date or any future date
+                    if ($dob->isToday() || $dob->isPast()) {
+                        $fail('يجب الا يكون التاريخ في الماضي ');
+                    }
+                },
+            ],
+
         ], $messages);
 
         $appointment = Appointment::create([
