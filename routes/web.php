@@ -30,6 +30,14 @@ Route::post('/contact', [ProfileController::class,'contact'])->name('contact');
 Route::get('/news-details/{id}', [ProfileController::class,'show'])->name('news-details');
 Route::post('/comment', [ProfileController::class,'comment'])->name('comment');
 
+
+Route::get('/contacts/{contact}/edit', [ProfileController::class, 'editcontact'])->name('contacts.edit');
+Route::delete('/contacts/{contact}', [ProfileController::class, 'destroycontact'])->name('contacts.destroy');
+Route::put('/contacts/{id}', [ProfileController::class, 'updatecontact'])->name('contacts.update');
+
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });

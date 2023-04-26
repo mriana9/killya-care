@@ -51,7 +51,7 @@ class ProfileController extends Controller
             $request->validate([
                 'name' => 'required',
                 'phone' =>'required',
-                'message' => 'required|date'
+                'message' => 'required'
             ], $messages);
 
             $appointment = Contact::create([
@@ -72,6 +72,9 @@ class ProfileController extends Controller
             return view('news-details',compact(['advise']));
 
         }
+
+
+
 
         public function comment(Request $request)
         {
@@ -152,4 +155,80 @@ class ProfileController extends Controller
         return redirect()->route('profile')->with('success', 'Profile updated successfully.');
     }
 
+
+    public function editcontact($id)
+    {
+        $contact = Contact::find($id);
+        return view('edit-contact', compact('contact'));
+    }
+
+
+
+    public function destroycontact(Contact $contact)
+    {
+        $contact->delete();
+
+        return redirect()->back()->with('success', 'تم الحذف بنجاح');
+    }
+
+
+    public function updatecontact(Request $request, $id)
+{
+    // $request->validate([
+    //     'name' => 'required',
+    //     'phone' => 'required|numeric',
+    //     'message' => 'required',
+    // ]);
+
+
+
+    $messages = [
+        'name.required' => 'حقل الاسم مطلوب',
+        'phone.required' => 'حقل رقم الهاتف مطلوب',
+        'message.required' => 'حقل الرسالة مطلوب',
+    ];
+
+
+
+    if (auth()->check()) {
+        $request->validate([
+            'message' => 'required'
+        ], $messages);
+
+        $contact = Contact::find($id);
+        $contact->name =auth()->user()->name . auth()->user()->l_name;
+        $contact->phone = auth()->user()->phone;
+        $contact->message = $request->input('message');
+        $contact->user_id =  auth()->user()->id;
+        ;
+
+        $contact->save();
+    } else {
+        $request->validate([
+            'name' => 'required',
+            'phone' =>'required',
+            'message' => 'required'
+        ], $messages);
+
+        $contact = Contact::find($id);
+        $contact->name = $request->input('name');
+        $contact->phone = $request->input('phone');
+        $contact->message = $request->input('message');
+        $contact->save();
+    }
+    // Store the form data in the database or take other actions
+
+    return redirect()->route('profile')->with('success', 'تم ارسال الرسالة بنجاح');
+
+
+
+
+    $contact = Contact::find($id);
+    $contact->name = $request->input('name');
+    $contact->phone = $request->input('phone');
+    $contact->message = $request->input('message');
+    $contact->save();
+
+    return redirect()->route('contacts.index')->with('success', 'تم التعديل بنجاح');
+}
 }
