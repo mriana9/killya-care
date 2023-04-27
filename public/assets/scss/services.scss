@@ -195,6 +195,10 @@
                 .description {
                     color: #8f8f8f;
                     padding: 10px 0px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-width: 200rem;
                 }
 
                 .read-more {

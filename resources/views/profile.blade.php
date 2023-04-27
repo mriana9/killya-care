@@ -162,25 +162,30 @@
                 <form class="row"  method="POST" action="{{ route('appointments.store') }}">
                     @csrf
                     <div class="col-md-6">
+                        <label> الاسم الاول</label>
                         <input type="text" placeholder="الاسم الاول" name="name" required
                         {{ auth()->check() ? 'value=' . auth()->user()->name . ' disabled' : '' }}>
                     </div>
                     <div class="col-md-6">
+                        <label>الاسم الأخير</label>
                         <input type="text" placeholder="الاسم الأخير" name="l_name" required
                         {{ auth()->check() ? 'value=' . auth()->user()->l_name . ' disabled' : '' }}>
                     </div>
                     <div class="col-md-6">
+                    <label>رقم الهاتف</label>
                         <input type="text" placeholder="رقم الهاتف" name="phone" required
                         {{ auth()->check() ? 'value=' . auth()->user()->phone . ' disabled' : '' }}>
                     </div>
                     <div class="col-md-6">
+                    <label>تاريخ الميلاد</label>
                         <input type="date"  placeholder=" تاريخ الميلاد" name="dob" required
                         {{ auth()->check() ? 'value=' . auth()->user()->dob . ' disabled' : '' }}>
                     </div>
                     <div class="col-md-6">
+                    <label>اختار الموعد</label>
                         <input type="datetime-local"  placeholder=" اختار الموعد" name="appointment" required>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 mt-4">
                         <button type="submit" > حجز موعد</button>
                     </div>
                 </form>
@@ -196,5 +201,6 @@
         @endsection
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        
     </body>
 </html>
