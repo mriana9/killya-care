@@ -60,9 +60,10 @@
                         </li>
                     </ul>
                 </div>
+                
                 <div class="h-100 col-md-6 col-sm-12 text-end d-flex justify-content-end align-items-center">
                     <div class="h-100 phone d-flex justify-content-center align-items-center">
-                        0591234567
+                        022271017
                         <i class='bx bxs-phone'></i>
                     </div>
 
@@ -75,7 +76,7 @@
        </div>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img class="img-fluid" src={{asset("assets/img/nav-logo.png")}} alt="logo-img">
@@ -86,19 +87,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{'/' }}">الرئيسية</a>
+                        <a class="nav-link home-link" aria-current="page" href="{{'/' }}">الرئيسية</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{'/about-us' }}">من نحن</a>
+                        <a class="nav-link about-us-link" href="{{'/about-us' }}">من نحن</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{'/services' }}">خدماتنا</a>
+                        <a class="nav-link services-link" href="{{'/services' }}">خدماتنا</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{'/news' }}">نصائح</a>
+                        <a class="nav-link news-link" href="{{'/news' }}">نصائح</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{'/contact-us' }}">اتصل بنا</a>
+                        <a class="nav-link contact-us-link" href="{{'/contact-us' }}">اتصل بنا</a>
                     </li>
                 </ul>
                 <div class="h-100 contact-info d-flex justify-content-center align-items-center">
@@ -106,7 +107,7 @@
                         <i class='bx bx-support'></i>
                     </div>
                     <div class="info">
-                        <h2>+9721234567</h2>
+                        <h2>022271017</h2>
                         <p>أحد-خميس : 24 ساعة</p>
                     </div>
                 </div>
@@ -114,17 +115,9 @@
         </div>
     </nav>
 </header>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-    $(document).ready(function () {
-            let current = location.pathname;
-            $('a[href$="' + location.pathname + '"]').addClass('active');
 
-            if (current == '/' || current == '/home' || current == '/services' || current == '/about-us' 
-                current == '/news' || current == '/news-details' || current == '/contact-us') {
-                $('#navbar li .nav-link').addClass('active');
-            }
-            });
-    </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="/assets/js/main.js"></script>
 </body>
 </html>

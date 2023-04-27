@@ -133,15 +133,15 @@
             caret-color: var(--primary-color);
 
             &::placeholder {
-                color: #000;
                 text-align: start;
+                font-size: 12px;
             }
         }
 
         button {
             width: 100%;
             border: none;
-            margin: 10px 0px;
+            margin-top: 33px;
             padding: 8px 10px;
             border-radius: 4px;
             color: #fff;

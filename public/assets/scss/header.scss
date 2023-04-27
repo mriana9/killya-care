@@ -5,10 +5,15 @@
     box-sizing: border-box;
 }
 
-.nav-link.active {
+.news-link.active_link,
+.home-link.active_link,
+.about-us-link.active_link,
+.services-link.active_link,
+.contact-us-link.active_link {
     color: var(--primary-color) !important;
     font-weight: 600 !important;
 }
+
 
 body::-webkit-scrollbar {
     width: 10px;             

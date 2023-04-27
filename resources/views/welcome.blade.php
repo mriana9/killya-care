@@ -32,8 +32,8 @@
 
                             @if(!auth()->check())
                                 <div class="home-page-btn">
-                                    <a href="{{ auth()->check() ? '#' : '/login' }}" class="primarily-button">تسجيل دخول</a>
-                                    <a href="{{ auth()->check() ? '#' : '/register' }}" class="primarily-button"> انشاء حساب</a>
+                                    <a href="{{ auth()->check() ? '/login' : '/login' }}" class="primarily-button">تسجيل دخول</a>
+                                    <a href="{{ auth()->check() ? '/register' : '/register' }}" class="primarily-button"> انشاء حساب</a>
                                 </div>
                             @endif
                         </div>
@@ -50,7 +50,7 @@
                         <div class="carousel-caption d-md-block">
                             <p>نهدف  إلى تقديم خدماتنا و تشمل هذه الخدمات مساعدة مرضى الفشل الكلوي المحتاجين, و المستلزمات الطبية الخاصة بالفشل الكلوي, تشجيع ودعم البحث العلمي وبرامج التوعية الخاصة.</p>
                             <div class="home-page-btn">
-                                <a href="#" class="primarily-button"> تواصل معنا </a>
+                                <a href="{{'/contact-us' }}" class="primarily-button"> تواصل معنا </a>
                             </div>
                         </div>
                     </div>
@@ -79,35 +79,40 @@
 
                     @if ($errors->any())
 
-                                        <div class="msg-error mt-2 d-flex algin-item-end text-danger">
-                                            <i class='bx bxs-error-circle mx-1 mt-1'></i>
-                                            <ul>
+                        <div class="msg-error mt-2 d-flex algin-item-end text-danger">
+                            <i class='bx bxs-error-circle mx-1 mt-1'></i>
+                                <ul>
                                                 @foreach ($errors->all() as $error)
                                                     <li>{{ $error }}</li>
                                                 @endforeach
-                                            </ul>
-                                        </div>
-                                    @endif
+                            </ul>
+                        </div>
+                    @endif
 
                     <form class="row"  method="POST" action="{{ route('appointments.store') }}">
                         @csrf
                         <div class="col-md-4">
+                            <label>الاسم الاول</label>
                             <input type="text" placeholder="الاسم الاول" name="name" required
                             {{ auth()->check() ? 'value=' . auth()->user()->name . ' disabled' : '' }}>
                         </div>
                         <div class="col-md-4">
+                        <label>الاسم الأخير</label>
                             <input type="text" placeholder="الاسم الأخير" name="l_name" required
                             {{ auth()->check() ? 'value=' . auth()->user()->l_name . ' disabled' : '' }}>
                         </div>
                         <div class="col-md-4">
+                        <label>رقم الهاتف</label>
                             <input type="text" placeholder="رقم الهاتف" name="phone" required
                             {{ auth()->check() ? 'value=' . auth()->user()->phone . ' disabled' : '' }}>
                         </div>
                         <div class="col-md-4">
+                        <label>تاريخ الميلاد</label>
                             <input type="date"  placeholder=" تاريخ الميلاد" name="dob" required
                             {{ auth()->check() ? 'value=' . auth()->user()->dob . ' disabled' : '' }}>
                         </div>
                         <div class="col-md-4">
+                        <label>تاريخ الحجز</label>
                             <input type="datetime-local"  placeholder=" اختار الموعد" name="appointment" required>
                         </div>
                         <div class="col-md-4">
@@ -217,8 +222,8 @@
                         @if(!auth()->check())
 
                         <div class="contact-buttons">
-                            <a href="#" class="primarily-button">تسجيل دخول</a>
-                            <a href="#" class="primarily-button"> انشاء حساب</a>
+                            <a href="{{'/login' }}" class="primarily-button">تسجيل دخول</a>
+                            <a href="{{'/register' }}" class="primarily-button"> انشاء حساب</a>
                         </div>
                         @endif
 
@@ -230,7 +235,7 @@
             <section class="our-services">
                 <div class="w-100 container text-center">
                     <div class="category m-auto">كلية كير  </div>
-                    <h2 class="section-title"> الخدمات التي يقدمها كلية كير</h2>
+                    <h2 class="section-title"> المميزات التي يقدمها كلية كير</h2>
                     <div class="row">
                         <div class="col-md-4">
                             <div class="service-box">
