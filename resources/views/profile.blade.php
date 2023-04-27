@@ -112,7 +112,15 @@
                                 @foreach(App\Models\Contact::where('user_id', auth()->user()->id)->orderBy('created_at')->get() as $contact)
                                     <div class="col-md-12">
                                         <div class="box pt-4" style="direction: rtl; text-align: right;">
-                                            <p > السؤال : {{$contact->message}}</p>
+                                            <p > السؤال : {{$contact->message}}
+
+                                                <a href="{{ route('contacts.edit', $contact) }}">edit</a>
+                                                
+                                                <form action="{{ route('contacts.destroy', $contact) }}" method="POST" style="display: inline-block;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-link">delete</button>
+                                            </form>    </p>
                                             @if($contact->answer)
                                                 <p >الجواب: {{$contact->answer->answers}}</p>
                                             @endif
