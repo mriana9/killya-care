@@ -94,11 +94,10 @@ class UserController extends Controller
        public function login(Request $request)
        {
            $credentials = $request->validate([
-               'email' => 'required|email',
+               'id_number' => 'required',
                'password' => 'required',
            ], [
-               'email.required' => 'حقل البريد الإلكتروني مطلوب',
-               'email.email' => 'يجب أن يكون حقل البريد الإلكتروني عنوان بريد إلكتروني صالح',
+               'id_number.required' => 'حقل البريد رقم الهوية مطلوب',
                'password.required' => 'حقل كلمة المرور مطلوب',
            ]);
 
@@ -109,7 +108,7 @@ class UserController extends Controller
            }
 
            return back()->withErrors([
-               'email' => 'لا يتوافق البريد الإلكتروني أو كلمة المرور المدخلة مع سجلاتنا.',
+               'email' => 'لا يتوافق  رقم الهوية أو كلمة المرور المدخلة مع سجلاتنا.',
            ]);
        }
 

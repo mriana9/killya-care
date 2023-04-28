@@ -34,9 +34,9 @@
                                     <div class="col-md-6 box">
                                         <label>
                                         <span class="text-danger">*</span>
-                                             الايميل
+                                             رقم الهوية
                                         </label>
-                                        <input type="text" placeholder="الايميل  " required name="email">
+                                        <input type="text" placeholder="رقم الهوية   " required name="id_number">
                                     </div>
                                     <div class="col-md-6 box">
                                         <label>
