@@ -37,6 +37,10 @@ Route::put('/contacts/{id}', [ProfileController::class, 'updatecontact'])->name(
 
 
 
+Route::delete('/comments/{id}', [ProfileController::class,'destroyComment'])->name('comments.destroy');
+
+
+
 
 Route::get('/', function () {
     return view('welcome');

@@ -57,9 +57,13 @@
                     <div class="user-name"> <i class="bx bx-user"></i> {{ $comment->user->name }}</div>
                     <div class="user-comment">{{ $comment->comment }}</div>
 
-                    <form class="w-100 d-flex justify-content-end">
-                        <button type="submit" style="border: none"><i class="bx bx-trash text-danger"></i></button>
-                    </form>  
+                    @if(Auth::check() && Auth::id() == $comment->user_id)
+                        <form action="{{ route('comments.destroy', $comment->id) }}" method="POST" class="w-100 d-flex justify-content-end">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" style="border: none"><i class="bx bx-trash text-danger"></i></button>
+                        </form>
+                    @endif
                 </div>
                 @endforeach
 

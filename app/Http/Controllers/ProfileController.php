@@ -231,4 +231,23 @@ class ProfileController extends Controller
 
     return redirect()->route('contacts.index')->with('success', 'تم التعديل بنجاح');
 }
+
+
+
+public function destroyComment($id)
+{
+    $comment = Comment::find($id);
+    if (!$comment) {
+        return redirect()->back()->with('error', 'Comment not found!');
+    }
+    if ($comment->user_id != Auth::id()) {
+        return redirect()->back()->with('error', 'You are not authorized to delete this comment!');
+    }
+    $comment->delete();
+    return redirect()->back()->with('success', 'Comment deleted successfully!');
+}
+
+
+
+
 }
