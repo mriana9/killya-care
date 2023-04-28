@@ -98,6 +98,25 @@
                             <button class="primarily-button" data-bs-toggle="modal" data-bs-target="#exampleModal"> حجز موعد</button>
 
                         </div>
+
+                        @if (session('success'))
+                    <div class="alert alert-success mt-2">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if ($errors->any())
+
+                    <div class="msg-error mt-2 d-flex algin-item-end text-danger">
+                        <i class='bx bxs-error-circle mx-1 mt-1'></i>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                     </div>
 
                     <div class="col-md-12 mt-3">
@@ -110,17 +129,20 @@
                             </div>
                             <div class="card-info">
                                 @foreach(App\Models\Contact::where('user_id', auth()->user()->id)->orderBy('created_at')->get() as $contact)
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 d-flex">
                                         <div class="box pt-4" style="direction: rtl; text-align: right;">
-                                            <p > السؤال : {{$contact->message}}
+                                            <p> السؤال : {{$contact->message}}
 
-                                                <a href="{{ route('contacts.edit', $contact) }}">edit</a>
-                                                
-                                                <form action="{{ route('contacts.destroy', $contact) }}" method="POST" style="display: inline-block;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-link">delete</button>
-                                            </form>    </p>
+                                                <div class="d-flex align-items-center commit-btn">
+                                                    <a  href="{{ route('contacts.edit', $contact) }}">تعديل</a>
+                                                    
+                                                        <form action="{{ route('contacts.destroy', $contact) }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit">حذف</button>
+                                                        </form>  
+                                                </div>  
+                                            </p>
                                             @if($contact->answer)
                                                 <p >الجواب: {{$contact->answer->answers}}</p>
                                             @endif
@@ -148,25 +170,6 @@
             </div>
             <div class="modal-body">
             <div class="make-a-appointment-box">
-
-                @if (session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
-                @endif
-
-                @if ($errors->any())
-
-                    <div class="msg-error mt-2 d-flex algin-item-end text-danger">
-                        <i class='bx bxs-error-circle mx-1 mt-1'></i>
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
                 <form class="row"  method="POST" action="{{ route('appointments.store') }}">
                     @csrf
                     <div class="col-md-6">

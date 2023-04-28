@@ -232,6 +232,38 @@
     }
 }
 
+.commit-btn {
+    width: 100%;
+    a{
+        text-decoration: none;
+        border: 1px solid var(--primary-color);
+        border-radius: 5px;
+        padding: 5px;
+        color: var(--primary-color);
+
+        &:hover {
+            color: #fff;
+            background-color: var(--primary-color);
+        }
+    }
+    
+    button {
+        background-color: transparent;
+        border: none;
+        margin-right: 10px;
+        border: 1px solid var(--primary-color);
+        border-radius: 5px;
+        padding: 5px;
+        color: var(--primary-color);
+
+        
+        &:hover {
+            color: #fff;
+            background-color: var(--primary-color);
+        }
+    }
+}
+
 .make-a-appointment-box {
     padding: 40px;
     background-color: #fff;

@@ -115,6 +115,38 @@
   background-color: #fff;
 }
 
+.commit-btn {
+  width: 100%;
+}
+
+.commit-btn a {
+  text-decoration: none;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  padding: 5px;
+  color: var(--primary-color);
+}
+
+.commit-btn a:hover {
+  color: #fff;
+  background-color: var(--primary-color);
+}
+
+.commit-btn button {
+  background-color: transparent;
+  border: none;
+  margin-right: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  padding: 5px;
+  color: var(--primary-color);
+}
+
+.commit-btn button:hover {
+  color: #fff;
+  background-color: var(--primary-color);
+}
+
 .make-a-appointment-box {
   padding: 40px;
   background-color: #fff;
