@@ -56,6 +56,10 @@
                 <div class="comment-box">
                     <div class="user-name"> <i class="bx bx-user"></i> {{ $comment->user->name }}</div>
                     <div class="user-comment">{{ $comment->comment }}</div>
+
+                    <form class="w-100 d-flex justify-content-end">
+                        <button type="submit" style="border: none"><i class="bx bx-trash text-danger"></i></button>
+                    </form>  
                 </div>
                 @endforeach
 
