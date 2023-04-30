@@ -77,7 +77,7 @@
                                             <span class="text-danger">*</span>
                                                  الايميل
                                             </label>
-                                            <input type="text" placeholder="الايميل " required name="email" value="{{ old('email') }}">
+                                            <input type="text" placeholder="الايميل "  name="email" value="{{ old('email') }}">
                                         </div>
                                         <div class="col-md-6 box">
                                             <label>
