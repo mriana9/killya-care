@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
+use Faker\Factory as Faker;
 
 class UserController extends Controller
 {
@@ -74,6 +75,7 @@ class UserController extends Controller
             }
 
             // Create the user
+            $faker = Faker::create();
             $user = User::create([
                 'name' => $request->input('name'),
                 'l_name' => $request->input('l_name'),
@@ -81,13 +83,21 @@ class UserController extends Controller
                 'f_name' => $request->input('f_name'),
                 'phone' => $request->input('phone'),
                 'dob' => $request->input('dob'),
-                'email' => $request->input('email') || 'defult@gmail.coms',
+                'email' =>  $request->input('email') ?? $faker->email,
                 'id_number' => $request->input('id_number'),
                 'password' => Hash::make($request->input('password')),
             ]);
 
         // Redirect the user to a success page
         return redirect('/login')->with('success', 'تم انشاء الحساب بنجاح');
+    }
+
+
+   public function generateRandomEmail() {
+        $domains = array('gmail.com', 'yahoo.com', 'hotmail.com', 'aol.com', 'outlook.com');
+        $username = substr(md5(rand()), 0, 7);
+        $domain = $domains[array_rand($domains)];
+        return $username . '@' . $domain;
     }
 
 
